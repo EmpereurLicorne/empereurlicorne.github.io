@@ -15,7 +15,7 @@ html, body {
 
 .profile {
     background-color: #2C2F33;
-    width: 100%; /* Modifier la largeur pour s'adapter à la taille de l'écran */
+    width: 75%; /* Modifier la largeur pour s'adapter à la taille de l'écran */
     margin: 5% auto 10px;
     border-radius: 20px;
     display: grid;
