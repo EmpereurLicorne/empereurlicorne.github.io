@@ -70,7 +70,8 @@
   
   .bottom-part > ul.social {
       display: flex;
-      align-self: center;    
+      align-self: center;
+      list-style: none;   
   }
   
   ul.social > li {
