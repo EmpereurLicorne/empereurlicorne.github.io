@@ -1,7 +1,6 @@
 :root {
-    --dark: #23272A;
-    --less-dark: #2C2F33;
-    --blurple: #5865F2;
+    --dark: #000000;
+    --gradient-profile :linear-gradient(to bottom right, #FFD3E6, #E0BBFF, #B4D8E7, #B2F7C9, #FFFACD, #FFCCCC, #AEC6CF);
 }
 
 html, body {
@@ -9,13 +8,17 @@ html, body {
     padding: 0;
     margin: 0;
     height: 100%;
-    background-color: #333;
+    background-image: url(img/licorne_fond.jpg);
+    background-size: cover;
+    background-position: center;
     overflow: hidden;
+    color: var(--dark);
+    font-family: cursive;
 }
 
 .profile {
-    background-color: #2C2F33;
-    width: 75%; /* Modifier la largeur pour s'adapter à la taille de l'écran */
+    background: var(--gradient-profile);
+    width: 75%;
     margin: 5% auto 10px;
     border-radius: 20px;
     display: grid;
@@ -25,7 +28,6 @@ html, body {
 }
 
 .top-part {
-    background-color: var(--dark);
     padding: 10px;
     border-radius: 20px 20px 0 0;
     display: flex;
@@ -41,7 +43,6 @@ html, body {
 }
 
 .top-part > p.name {
-    color: #ffffff;
     font-size: 25px;
     align-self: center;
     margin: 5px;
@@ -60,7 +61,6 @@ ul.badges > li {
 }
 
 .bottom-part {
-    background-color: var(--blurple);
     border-radius: 0 0 20px 20px;
     padding: 10px;
     display: flex;
@@ -78,13 +78,12 @@ ul.social > li {
 }
 
 li > a {
-    color: #fff;
     font-size: 30px;
     transition: color 0.3s;
 }
 
 li > a:hover {
-    color: #cfcfcf;
+    color: var(--dark);
     transition: color 0.3s;
 }
 
@@ -93,12 +92,11 @@ li > a:hover {
 }
 
 .bio > p {
-    color: #fff;
     text-align: center;
 }
 
 .bio a {
-    color: #c9d1d9;
+    color: var(--dark);
     text-decoration: none;
     transition: text-decoration 0.1s;
 }
@@ -109,13 +107,13 @@ li > a:hover {
 }
 
 hr {
-    margin: 0;
+    border: none;
+    margin: 0px;
     height: 1px;
-    background-color: var(--dark);
+    background-color: #000000;
 }
 
 .projects > h1 {
-    color: #fff;
     font-size: 15px;
     margin: 10px;
 }
@@ -142,7 +140,6 @@ hr {
 }
 
 .project-box > p {
-    color: #fff;
     margin-left: 10px;
     margin-top: 8px;
     font-size: 20px;
@@ -155,8 +152,8 @@ body {
 @media (max-width: 600px) {
 
     .profile {
-        width: 90%; /* Modifier la largeur pour s'adapter à la taille de l'écran */
-        margin: 0 auto; /* Centrer horizontalement */
+        width: 90%;
+        margin: 0 auto;
     }
 
     .top-part { border-radius: 0; }
