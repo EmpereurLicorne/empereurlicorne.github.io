@@ -1,38 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Empereur Licorne</title>
     <link rel="icon" type="image/png" href="img/profile.png">
-    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.6.6/css/flag-icons.min.css"/>
 </head>
 <body>
     <div class="profile">
-        <div class="top-part">
-            <img src= "img/profile.png" alt="Photo de profile">
-            <p class="name">Empereur Licorne</p>
-            <ul class="badges">
-                <li><img src="img/Python.png" alt="Python" width="25" height="25"></li>
-                <li><img src="img/JavaScript.png" alt="JavaScript" width="25" height="25"></li>
-                <li><img src="img/R.png" alt="R" width="25" height="25"></li>
-            </ul>
-        </div>
-        <hr>
+        <nav class="menus">
+            <select id="lang-select" onchange="changeLang()">
+                <option value="fr">Français</option>
+                <option value="en">English</option>
+                <option value="de">Deutsch</option>
+            </select>
+        </nav>
+        <main id="main-content">
+            <section id="francais" lang="fr" xml:lang="fr">
+                <div class="top-part">
+                    <img src="img/profile.png" alt="Photo de profile">
+                    <p class="name">Empereur Licorne</p>
+                    <ul class="badges">
+                        <li><img src="img/Python.png" alt="Python" width="25" height="25"></li>
+                        <li><img src="img/JavaScript.png" alt="JavaScript" width="25" height="25"></li>
+                        <li><img src="img/R.png" alt="R" width="25" height="25"></li>
+                    </ul>
+                </div>
+                <hr>
         <div class="bio">
-            <p>👑 - Empereur Licorne/Kaiser Einhorn</p>
-            <p>💻 - Développeur/Entwickler : Python, JavaScript et/und R</p>
-            <p>👤 - Pdp par/ Avatar von <a href="https://www.instagram.com/maxwouf?igsh=Z3BneG5xZGg4dmZu">@maxwouf</a></p>
+            <p>👑 - Empereur Licorne</p>
+            <p>💻 - Développeur : Python, JavaScript et R</p>
+            <p>👤 - Pdp par <a href="https://www.instagram.com/maxwouf?igsh=Z3BneG5xZGg4dmZu">@maxwouf</a></p>
         </div>
         <hr>
         <div class="projects">
             <h1>Projects :</h1>
             <a href="Tina Corps/index.html" class="project-box">
-                <img src="img/tina_corps_logo_1.png" alt="Project Image">
-                <p>Tina corps</p>
+                <img src="img/tina_corps_logo_1.png" alt="Tina Corp">
+                <p>Tina corp</p>
             </a>
-            <a href="https://empereurlicorne.github.io/" class="project-box">
-                <img src="img/licorne_proj.jpg" alt="Project Image">
+            <a href="https://empereurlicorne.github.io" class="project-box">
+                <img src="img/licorne_proj.jpg" alt="Licorne">
                 <p>Licorne</p>
             </a>
         </div>
@@ -40,9 +50,84 @@
         <div class="bottom-part">
             <ul class="social">
                 <li><a href="https://github.com/EmpereurLicorne" target="_blank"><img src="img/github.png" alt="GitHub" width="25" height="25"></a></li>
-                <li><a href="https://www.instagram.com/empereur_licorne?igsh=OXVqeGYyNGdrOGFq" target="_blank"><img src="img/instagram.png" alt="Instagram" width="25" height="25"></a></li>
-                
+                <li><a href="https://www.instagram.com/empereur_licorne?igsh=OXVqeGYyNGdrOGFq" target="_blank"><img src="img/instagram.png" alt="Instagram" width="25" height="25"></a></li>  
         </div>
+            </section>
+
+            <section id="anglais" lang="en" xml:lang="en" style="display: none;">
+                <div class="top-part">
+                    <img src="img/profile.png" alt="Photo de profile">
+                    <p class="name">Empereur Licorne/Kaiser Einhorn</p>
+                    <ul class="badges">
+                        <li><img src="img/Python.png" alt="Python" width="25" height="25"></li>
+                        <li><img src="img/JavaScript.png" alt="JavaScript" width="25" height="25"></li>
+                        <li><img src="img/R.png" alt="R" width="25" height="25"></li>
+                    </ul>
+                </div>
+                <hr>
+                <div class="bio">
+                    <p>👑 - Empereur Licorne/Kaiser Einhorn</p>
+                    <p>💻 - Developer: Python, JavaScript and R</p>
+                    <p>👤 - profile picture by <a href="https://www.instagram.com/maxwouf?igsh=Z3BneG5xZGg4dmZu">@maxwouf</a></p>
+                </div>
+                <hr>
+        <div class="projects">
+            <h1>Projects :</h1>
+            <a href="Tina Corps/index.html" class="project-box">
+                <img src="img/tina_corps_logo_1.png" alt="Tina Corp">
+                <p>Tina corp</p>
+            </a>
+            <a href="https://empereurlicorne.github.io" class="project-box">
+                <img src="img/licorne_proj.jpg" alt="Licorne">
+                <p>Licorne</p>
+            </a>
+        </div>
+        <hr>
+        <div class="bottom-part">
+            <ul class="social">
+                <li><a href="https://github.com/EmpereurLicorne" target="_blank"><img src="img/github.png" alt="GitHub" width="25" height="25"></a></li>
+                <li><a href="https://www.instagram.com/empereur_licorne?igsh=OXVqeGYyNGdrOGFq" target="_blank"><img src="img/instagram.png" alt="Instagram" width="25" height="25"></a></li>  
+        </div>
+            </section>
+
+            <section id="allemand" lang="de" xml:land="de" style="display: none;">
+                <div class="top-part">
+                    <img src="img/profile.png" alt="Photo de profile">
+                    <p class="name">Kaiser Einhorn</p>
+                    <ul class="badges">
+                        <li><img src="img/Python.png" alt="Python" width="25" height="25"></li>
+                        <li><img src="img/JavaScript.png" alt="JavaScript" width="25" height="25"></li>
+                        <li><img src="img/R.png" alt="R" width="25" height="25"></li>
+                    </ul>
+                </div>
+                <hr>
+                <div class="bio">
+                    <p>👑 - Kaiser Einhorn</p>
+                    <p>💻 - Entwickler: Python, JavaScript und R</p>
+                    <p>👤 - Profilfoto von <a href="https://www.instagram.com/maxwouf?igsh=Z3BneG5xZGg4dmZu">@maxwouf</a></p>
+                </div>
+                <hr>
+            <div class="projects">
+                <h1>Projects :</h1>
+                <a href="Tina Corps/index.html" class="project-box">
+                    <img src="img/tina_corps_logo_1.png" alt="Tina Corp">
+                    <p>Tina corp</p>
+                </a>
+                <a href="https://empereurlicorne.github.io" class="project-box">
+                    <img src="img/licorne_proj.jpg" alt="Licorne">
+                    <p>Licorne</p>
+                </a>
+            </div>
+            <hr>
+            <div class="bottom-part">
+                <ul class="social">
+                    <li><a href="https://github.com/EmpereurLicorne" target="_blank"><img src="img/github.png" alt="GitHub" width="25" height="25"></a></li>
+                    <li><a href="https://www.instagram.com/empereur_licorne?igsh=OXVqeGYyNGdrOGFq" target="_blank"><img src="img/instagram.png" alt="Instagram" width="25" height="25"></a></li>  
+            </div>
+            </section>
+        </main>
+    
     </div>
+    <script src="main.js"></script>
 </body>
 </html>

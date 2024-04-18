@@ -1,26 +1,41 @@
 :root {
     --dark: #000000;
-    --gradient-profile :linear-gradient(to bottom right, #FFD3E6, #E0BBFF, #B4D8E7, #B2F7C9, #FFFACD, #FFCCCC, #AEC6CF);
+    --gardient-card: linear-gradient(to bottom right, #FFD3E6, #E0BBFF, #B4D8E7, #B2F7C9, #FFFACD, #FFCCCC, #AEC6CF);
 }
 
-html, body {
+htlm, body {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
     height: 100%;
-    background-image: url(img/licorne_fond.jpg);
+    background-image: url(img/licorne_font.jpg);
     background-size: cover;
     background-position: center;
     overflow: hidden;
     color: var(--dark);
     font-family: cursive;
+    
+}
+
+.menus {
+    background: transparent;
+    border: none;
+}
+
+.menus > select {
+    background: transparent;
+    border: none;
+}
+
+.menus > option {
+    background: transparent;
+    border: none;
 }
 
 .profile {
-    background: var(--gradient-profile);
+    background: var(--gardient-card);
     width: 75%;
     margin: 5% auto 10px;
-    border-radius: 20px;
     display: grid;
     grid-template-rows: auto 1fr auto;
     min-height: 300px;
@@ -45,6 +60,7 @@ html, body {
 .top-part > p.name {
     font-size: 25px;
     align-self: center;
+    text-align: center;
     margin: 5px;
 }
 
