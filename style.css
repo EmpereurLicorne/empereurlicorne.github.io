@@ -41,6 +41,7 @@ html, body {
     grid-template-rows: auto 1fr auto;
     min-height: 300px;
     padding: 0;
+    border-radius: 2.5%;
 }
 
 .top-part {
