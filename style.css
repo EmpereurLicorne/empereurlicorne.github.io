@@ -3,7 +3,7 @@
     --gardient-card: linear-gradient(to bottom right, #FFD3E6, #E0BBFF, #B4D8E7, #B2F7C9, #FFFACD, #FFCCCC, #AEC6CF);
 }
 
-htlm, body {
+html, body {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
@@ -17,9 +17,9 @@ htlm, body {
     
 }
 
+
 .menus {
     background: transparent;
-    border: none;
 }
 
 .menus > select {
@@ -29,7 +29,6 @@ htlm, body {
 
 .menus > option {
     background: transparent;
-    border: none;
 }
 
 .profile {
