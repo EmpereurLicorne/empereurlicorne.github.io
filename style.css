@@ -20,6 +20,8 @@ html, body {
 
 .menus {
     background: transparent;
+    margin-left: 1%;
+    margin-top: 1%;
 }
 
 .menus > select {
