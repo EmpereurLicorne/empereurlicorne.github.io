@@ -1,0 +1,271 @@
+/*
+// 29 avril après midi
+//  2 mais à 9h
+// 16 mais à 9h
+// 17 mais à 9h
+// 
+*/
+
+:root {
+    --dark: #23272A;
+    --less-dark: #2C2F33;
+    --blurple: #5865F2;
+    --font-htlm: #333;
+    --font-profile: #2c2c2c;  
+}
+
+html, body {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    background-color: var(--font-htlm);
+    overflow: hidden;
+}
+
+.profile {
+    background-color: var(--font-profile);
+    width: 100%;
+    border-radius: 20px;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 300px;
+    padding: 0;
+}
+
+.menus {
+    background: transparent;
+    border: none;
+    margin-left: 1%;
+    margin-top: 1%;
+}
+
+.menus > select {
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    color: #000000;
+}
+
+.menus > option {
+    background: transparent;
+    border: none;
+}
+
+.top-part {
+    background-color: var(--dark);
+    padding: 10px;
+    border: 20px 20px 0 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.top-part > img {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 50%;
+    align-self: center;
+}
+
+.top-part > p.name {
+    color: #ffffff;
+    font-size: 25px;
+    align-self: center;
+    margin: 5px;
+}
+
+.top-part > a.licence {
+    color: #ffffff;
+    text-decoration: none;
+    background-color: #8000ff;
+    margin-right: 100%;
+}
+
+.bio {
+    padding: 5px;
+    text-align: center;
+    color: #ffffff;
+}
+
+hr {
+    margin: 0;
+    height: 2px;
+    border: none;
+    background-color: var(--dark);
+}
+
+.projects > h1 {
+    color: #ffffff;
+    margin: 10px;
+    text-align: center;
+}
+
+.project-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: none;
+    transition: box-shadow 0.1s;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 5px 5px 5px 10px;
+    overflow-y: auto;
+}
+
+.projects > .project-box:hover {
+    box-shadow: 0 0 7px 3px rgba(0,0,0,0.75);
+    transition: box-shadow 0.1s;
+}
+
+.project-box > img {
+    width: 20%;
+    height: auto;
+    max-width: 100%;
+    object-fit: cover;
+    align-self: center;
+}
+
+.project-box > p {
+    color: #fff;
+    margin-top: 8px;
+    margin-bottom: 10px; 
+    font-size: 20px;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    border: none;
+}
+
+.box > img {
+    width: 90px;
+    height: 90px;
+    padding: 10px;
+    object-fit: cover;
+    border-radius: 50%;
+    align-self: center;
+}
+
+.box > h1 {
+    text-align: center;
+    color: #ffffff;
+    margin-top: 0.01%;
+    font-size: 30px;
+}
+
+.box > h2 {
+    text-align: center;
+    color: #ffffff;
+    margin-top: 0.01%;
+    font-size: 25px;
+}
+
+.box > p {
+    text-align: center;
+    color: #ffffff;
+    margin-top: 5px;
+    font-size: 25px;
+}
+
+.box > ul.source {
+    align-self: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+}
+
+ul.social > li {
+    width: 50px;
+}
+
+.bottom-part {
+    border-radius: 0 0 20px 20px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    background: var(--blurple);
+}
+
+.bottom-part > ul.social {
+    display: flex;
+    align-self: center;
+    list-style: none;
+}
+
+ul.social > li {
+    margin-right: 10px;
+}
+
+body {
+    overflow-y: scroll !important;
+}
+
+@media (max-width: 949px) {
+
+    .profile {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .top-part { border-radius: 0; }
+    .bottom-part { border-radius: 0; }
+
+    .project-box {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .project-box > img {
+        width: 50%;
+    }
+
+    .box {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centrer les éléments horizontalement */
+        text-align: center; /* Centrer le texte */
+        border: none;
+    }
+    
+    .box > img {
+        width: 90px;
+        height: 90px;
+        padding: 10px;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+    
+    .box > h1 {
+        color: #ffffff;
+        font-size: 30px;
+        margin-top: 5px; /* Augmenter légèrement la marge entre h1 et l'image */
+    }
+    
+    .box > h2 {
+        color: #ffffff;
+        font-size: 25px;
+        margin-top: 5px; /* Augmenter légèrement la marge entre h2 et h1 */
+    }
+    
+    .box > p {
+        color: #ffffff;
+        font-size: 25px;
+        margin-top: 5px;
+    }
+    
+    .box > ul.source {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        list-style: none;
+        padding: 0; /* Supprimer les marges par défaut */
+    }
+    
+    .box > ul.source > li {
+        width: 50px;
+    }
+    
+}
