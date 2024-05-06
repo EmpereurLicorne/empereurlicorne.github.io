@@ -1,6 +1,6 @@
 :root {
     --dark: #000000;
-    --gardient-card: linear-gradient(to bottom right, #FFD3E6, #E0BBFF, #B4D8E7, #B2F7C9, #FFFACD, #FFCCCC, #AEC6CF);
+    --card: linear-gradient(to bottom right, #FFD3E6, #E0BBFF, #B4D8E7, #B2F7C9, #FFFACD, #FFCCCC, #AEC6CF);
 }
 
 html, body {
@@ -8,34 +8,15 @@ html, body {
     padding: 0;
     margin: 0;
     height: 100%;
-    background-image: url(img/licorne_font.jpg);
+    background-image: url(img/font.jpg);
     background-size: cover;
     background-position: center;
-    overflow: hidden;
-    color: var(--dark);
     font-family: cursive;
-    
-}
-
-
-.menus {
-    background: transparent;
-    margin-left: 1%;
-    margin-top: 1%;
-}
-
-.menus > select {
-    background: transparent;
-    border: none;
-}
-
-.menus > option {
-    background: transparent;
 }
 
 .profile {
-    background: var(--gardient-card);
-    width: 75%;
+    background: var(--card);
+    width: 90%;
     margin: 5% auto 10px;
     display: grid;
     grid-template-rows: auto 1fr auto;
@@ -44,11 +25,32 @@ html, body {
     border-radius: 2.5%;
 }
 
+.lang {
+    margin-left: 15px;
+}
+
+.lang a, .lang p {
+    display: inline;
+    text-decoration: none;
+}
+
+.lang_active {
+    color: aqua;
+    text-decoration: underline;
+}
+
 .top-part {
     padding: 10px;
     border-radius: 20px 20px 0 0;
     display: flex;
     flex-direction: column;
+}
+
+.top-part > p.name {
+    font-size: 25px;
+    align-self: center;
+    text-align: center;
+    margin: 5px;
 }
 
 .top-part > img {
@@ -59,23 +61,78 @@ html, body {
     align-self: center;
 }
 
-.top-part > p.name {
-    font-size: 25px;
-    align-self: center;
-    text-align: center;
-    margin: 5px;
+.bio {
+    padding: 10px;
 }
 
-.top-part > ul.badges {
-    align-self: center;
+.bio > p {
+    text-align: center; 
+}
+
+hr {
+    border: none;
+    margin: 0px;
+    height: 1px;
+    background-color: #000000;
+}
+
+#container {
+    padding: 10px;
+}
+  
+#text {
+    text-align: center;   
+}
+
+#heure {
+    text-align: center;   
+}
+
+.projects {
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
     align-items: center;
-    list-style: none;
 }
 
-ul.badges > li {
-    width: 50px;
+h1 {
+    margin-bottom: 20px;
+}
+
+.project-box {
+    display: flex;
+    align-items: center;
+    width: 75%;
+    margin-top: 20px;
+    transition: box-shadow 1s;
+    text-decoration: none;
+}
+
+.project-box:hover {
+    box-shadow: 0 0 7px 3px rgba(0,0,0,0.75);
+}
+
+.project-box:hover h2 {
+    color: #0026ff;
+    text-decoration: underline;
+    transition: 1s;
+}
+
+.project-box img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.project-info {
+    flex-grow: 1; 
+    text-decoration: none;
+    color: #000000;
+}
+
+.project-info h2 {
+    margin: 0;
+    transition: 1s;
 }
 
 .bottom-part {
@@ -105,75 +162,73 @@ li > a:hover {
     transition: color 0.3s;
 }
 
-.bio {
-    padding: 20px;
-}
-
-.bio > p {
-    text-align: center;
-}
-
-.bio a {
-    color: var(--dark);
-    text-decoration: none;
-    transition: text-decoration 0.1s;
-}
-
-.bio a:hover {
-    text-decoration: underline;
-    transition: text-decoration 0.1s;
-}
-
-hr {
+.vazi_clique {
+    background: #f396ff;
     border: none;
-    margin: 0px;
-    height: 1px;
-    background-color: #000000;
+    width: 75%;
 }
 
-.projects > h1 {
-    font-size: 15px;
-    margin: 10px;
+.vazi_clique button {
+    background: #E0BBFF;
+    border: none;
 }
 
-.projects > .project-box {
-    box-shadow: none;
-    transition: box-shadow 0.1s;
-    display: flex;
+.astuce {
     margin-top: 10px;
-    margin-bottom: 10px;
-    padding: 5px 5px 5px 10px;
+    background: transparent;
+    border: none;
 }
 
-.projects > .project-box:hover {
-    box-shadow: 0 0 7px 3px rgba(0,0,0,0.75);
-    transition: box-shadow 0.1s;
-}
-
-.project-box > img {
+.astuce img {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    object-fit: cover;
-}
-
-.project-box > p {
-    margin-left: 10px;
-    margin-top: 8px;
-    font-size: 20px;
-}
-
-body {
-    overflow-y: scroll !important;
 }
 
 @media (max-width: 600px) {
-
     .profile {
         width: 90%;
         margin: 0 auto;
     }
 
-    .top-part { border-radius: 0; }
-    .bottom-part { border-radius: 0; }
+    .project-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 75%;
+        margin-top: 20px;
+        transition: box-shadow 1s;
+        text-decoration: none;
+    }
+    
+    .project-box:hover {
+        box-shadow: 0 0 7px 3px rgba(0,0,0,0.75);
+    }
+    
+    .project-box:hover h2 {
+        color: #0026ff;
+        text-decoration: underline;
+        transition: 1s;
+    }
+    
+    .project-box img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin-bottom: 20px;
+    }
+    
+    .project-info {
+        flex-grow: 1; 
+        text-decoration: none;
+        color: #000000;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .project-info h2, .project-info p {
+        margin: 0;
+        text-align: center;
+    }
 }
