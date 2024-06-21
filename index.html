@@ -1,159 +1,154 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Empereur Licorne</title>
-    <link rel="icon" type="image/png" href="img/profile.png">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="profile">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Empereur Licorne</title>
+        <link rel="icon" href="img/profile.png" type="image/png">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="animations.css">
+    </head>
+    <body>
+        <div class="profile">
 
+            <!--Sections français-->
 
-
-        <section id="fr" style="display: none;">
-            <div class="lang">
-                <a class="lang_active" href="#" onclick="$0x1548('fr')">fr</a>
-                <p>/</p>
-                <a href="#" onclick="$0x1548('en')">en</a>
-                <p>/</p>
-                <a href="#" onclick="$0x1548('de')">de</a>
-            </div>
-            <div class="top-part">
-                <img src="img/profile.png" alt="">
-                <p class="name">Empereur Licorne</p>
-            </div>
-            <hr>
-            <div class="bio" id="container">
-                <p id="text_fr"></p>
-                <p id="heure_fr"></p>
-                <p>Je suis en cours d'élaboration de plusieurs projets dans le domaine informatique dont principalement mon projet n°I qui est la 'Tina Corp'.</p>
-            </div>
-            <hr>
-            <div class="projects">
-                <dialog id="digalogue_fr" class="vazi_clique">        
-                    <p>Pssst, toi là, qui regardes ça, je vais te donner une information. Tu peux cliquer sur les projets, cela t'amènera à la page des projets en question. Et si la page n'est pas encore faite, ça t'enverra sur cette page actuelle.</p>
-                    <button id="close_dialog_fr">fermé</button>
-                </dialog>
-                <button id="open_dialogue_fr" class="astuce">-&gt;<img src="img/astuce.png" alt="" class="astuce">&lt;-</button>
-                <h1>Projects :</h1>
-                <a href="tina corp/index.html" class="project-box">
-                    <img src="img/tina_corps_logo_1.png" alt="">
-                    <div class="project-info">
-                        <h2>Tina Corp</h2>
-                        <p>Tina Corp est une organisations que je développe et supervise.</p>
-                        <p>J'assure de son bon développement et de sa maintenance.</p>
-                        <p>C'est l'un de mes plus gros projets personnel, le plus complexe et le plus amusant.</p>
-                    </div>
-                </a>
-            </div>
-            <hr>
-            <footer>
+            <section id="fr" style="display: none;">
+                <div class="lang">
+                    <a href="#" class="lang_active" onclick="choose_lang('fr')">fr</a>
+                    <p>/</p>
+                    <a href="#" onclick="choose_lang('en')">en</a>
+                    <p>/</p>
+                    <a href="#" onclick="choose_lang('de')">de</a>
+                </div>
+                <div class="top-part">
+                    <img src="img/profile.png" alt="">
+                    <p class="name">Empereur Licorne</p>
+                </div>
+                <hr>
+                <div class="bio">
+                    <p id="text_fr"></p>
+                    <p id="heure_fr"></p>
+                    <p>Je suis en cours d'élaboration de plusieurs projets dans le domaine informatique dont principalement mon projet n°I qui est la 'Tina Corp'.</p>
+                </div>
+                <hr>
+                <div class="projects">
+                    <h1>Projects :</h1>
+                    <a href="tina corp/index.html" class="project-box">
+                        <img src="img/tina_corps_logo_1.png" alt="">
+                        <div class="project-info">
+                            <h2>Tina Corp</h2>
+                            <p>Tina Corp est une organisations que je développe et supervise.</p>
+                            <p>J'assure de son bon développement et de sa maintenance.</p>
+                            <p>C'est l'un de mes plus gros projets personnel, le plus complexe et le plus amusant.</p>
+                        </div>
+                    </a>
+                    <a href="#" class="project-box">
+                        <img src="img/nextcord.png" alt="">
+                        <div class="project-info">
+                            <h2>Nextcord</h2>
+                            <p>Nextcord est une librairie que je suis entrain d'apprendre qui sera utilisé pour mon bot Tina</p>
+                            <p>Je commence quelques projets simples et publiques pour bien connaitre la librairie</p>
+                            <p>Je vais mettre tout mes petits projets avec Nextcord en open source et téléchargeable</p>
+                        </div>
+                    </a>
+                </div>
+                <hr>
                 <div class="bottom-part">
                     <ul class="social">
                         <li><a href="https://github.com/EmpereurLicorne" target="_blank"><img src="img/github.png" alt="GitHub" width="25" height="25"></a></li>
                         <li><a href="https://www.instagram.com/empereur_licorne?igsh=OXVqeGYyNGdrOGFq" target="_blank"><img src="img/instagram.png" alt="Instagram" width="25" height="25"></a></li>  
                 </div>
-            </footer>
-        </section>
+            </section>
 
+            <!--Sections englais-->
 
-
-        <section id="en" style="display: none;">
-            <div class="lang">
-                <a href="#" onclick="$0x1548('fr')">fr</a>
-                <p>/</p>
-                <a class="lang_active" href="#" onclick="$0x1548('en')">en</a>
-                <p>/</p>
-                <a href="#" onclick="$0x1548('de')">de</a>
-            </div>
-            <div class="top-part">
-                <img src="img/profile.png" alt="">
-                <p class="name">Empereur Licorne/Kaiser Einhorn</p>
-            </div>
-            <hr>
-            <div class="bio" id="container">
+            <section id="en" style="display: none;">
+                <div class="lang">
+                    <a href="#" onclick="choose_lang('fr')">fr</a>
+                    <p>/</p>
+                    <a href="#" class="lang_active" onclick="choose_lang('en')">en</a>
+                    <p>/</p>
+                    <a href="#" onclick="choose_lang('de')">de</a>
+                </div>
+                <div class="top-part">
+                    <img src="img/profile.png" alt="">
+                    <p class="name">Empereur Licorne/Kaiser Einhorn</p>
+                </div>
+                <hr>
+                <div class="bio">
                     <p id="text_en"></p>
                     <p id="heure_en"></p>
                     <p>I'm currently working on several projects in the IT field, the main one being my n°I project, which is the 'Tina Corp'.</p>
-            </div>
-            <hr>
-            <div class="projects">
-                <dialog id="digalogue_en" class="vazi_clique">        
-                    <p>Pssst, you there, looking at this, I'm going to give you some information. You can click on the projects, which will take you to the project page in question. And if the page isn't up yet, it'll take you to this current page.</p>
-                    <button id="close_dialog_en">close</button>
-                </dialog>
-                <button id="open_dialogue_en" class="astuce">-&gt;<img src="img/astuce.png" alt="" class="astuce">&lt;-</button>
-                <h1>Projects :</h1>
-                <a href="tina corp/index.html" class="project-box">
-                    <img src="img/tina_corps_logo_1.png" alt="">
-                    <div class="project-info">
-                        <h2>Tina Corp</h2>
-                        <p>Tina Corp is an organization that I develop and supervise.</p>
-                        <p>I ensure its proper development and maintenance.</p>
-                        <p>It's one of my biggest personal projects, the most complex and the most fun.</p>
-                    </div>
-                </a>
-            </div>
-            <hr>
-            <footer>
+                </div>
+                <hr>
+                <div class="projects">
+                    <h1>Projects :</h1>
+                    <a href="#" class="project-box">
+                        <img src="img/tina_corps_logo_1.png" alt="">
+                        <div class="project-info">
+                            <h2>Tina Corp</h2>
+                            <p>Tina Corp is an organization that I develop and supervise.</p>
+                            <p>I ensure its proper development and maintenance.</p>
+                            <p>It's one of my biggest personal projects, the most complex and the most fun.</p>
+                        </div>
+                    </a>
+                    <a href="#" class="project-box">
+                        <img src="img/nextcord.png" alt="">
+                        <div class="project-info">
+                            <h2>Nextcord</h2>
+                            <p>Nextcord is a library I'm learning to use for my Tina bot.</p>
+                            <p>I'm starting a few simple public projects to get to know the bookshop.</p>
+                            <p>I'm going to make all of my little projects with Nextcord open source and available for download.</p>
+                        </div>
+                    </a>
+                </div>
+                <hr>
                 <div class="bottom-part">
                     <ul class="social">
                         <li><a href="https://github.com/EmpereurLicorne" target="_blank"><img src="img/github.png" alt="GitHub" width="25" height="25"></a></li>
                         <li><a href="https://www.instagram.com/empereur_licorne?igsh=OXVqeGYyNGdrOGFq" target="_blank"><img src="img/instagram.png" alt="Instagram" width="25" height="25"></a></li>  
                 </div>
-            </footer>
-        </section>
+            </section>
 
+            <!--Sections allemand-->
 
-        <section id="de" style="display: none;">
-            <div class="lang">
-                <a href="#" onclick="$0x1548('fr')">fr</a>
-                <p>/</p>
-                <a href="#" onclick="$0x1548('en')">en</a>
-                <p>/</p>
-                <a class="lang_active" href="#" onclick="$0x1548('de')">de</a>
-            </div>
-            <div class="top-part">
+            <section id="de" style="display: none;">
+                <div class="lang">
+                    <a href="#" onclick="choose_lang('fr')">fr</a>
+                    <p>/</p>
+                    <a href="#" onclick="choose_lang('en')">en</a>
+                    <p>/</p>
+                    <a href="#" class="lang_active" onclick="choose_lang('de')">de</a>
+                </div>
+                <div class="top-part">
                     <img src="img/profile.png" alt="">
                     <p class="name">Kaiser Einhorn</p>
-            </div>
-            <hr>
-            <div class="bio" id="container">
-                <p id="text_de"></p>
-                <p id="heure_de"></p>
-                <p>Ich bin dabei, mehrere Projekte im IT-Bereich zu entwickeln, darunter hauptsächlich mein Projekt Nr. I, das die 'Tina Corp' ist.</p>
-            </div>
-            <hr>
-            <div class="projects">
-                <dialog id="digalogue_de" class="vazi_clique">        
-                    <p>Pssst, du da, ich werde dir eine Information geben. Du kannst auf die Projekte klicken, das bringt dich auf die Seite des jeweiligen Projekts. Und wenn die Seite noch nicht gemacht ist, schickt es dich auf diese aktuelle Seite.</p>
-                    <button id="close_dialog_de">schließen</button>
-                </dialog>
-                <button id="open_dialogue_de" class="astuce">-&gt;<img src="img/astuce.png" alt="" class="astuce">&lt;-</button>
-                <h1>Projekte :</h1>
-                <a href="tina corp/index.html" class="project-box">
-                    <img src="img/tina_corps_logo_1.png" alt="">
-                    <div class="project-info">
-                        <h2>Tina Corp</h2>
-                        <p>Tina Corp ist eine Organisation, die ich entwickle und beaufsichtige.</p>
-                        <p>Ich sorge dafür, dass sie sich gut entwickelt und gepflegt wird.</p>
-                        <p>Es ist eines meiner größten persönlichen Projekte, das komplexeste und das was am meisten Spaß macht</p>
-                    </div>
-                </a>
-            </div>
-            <hr>
-            <footer>
+                </div>
+                <hr>
+                <div class="bio">
+                    <p id="text_de"></p>
+                    <p id="heure_de"></p>
+                    <p>Ich bin dabei, mehrere Projekte im IT-Bereich zu entwickeln, darunter hauptsächlich mein Projekt Nr. I, das die 'Tina Corp' ist.</p>
+                </div>
+                <hr>
+                <hr>
                 <div class="bottom-part">
                     <ul class="social">
                         <li><a href="https://github.com/EmpereurLicorne" target="_blank"><img src="img/github.png" alt="GitHub" width="25" height="25"></a></li>
                         <li><a href="https://www.instagram.com/empereur_licorne?igsh=OXVqeGYyNGdrOGFq" target="_blank"><img src="img/instagram.png" alt="Instagram" width="25" height="25"></a></li>  
                 </div>
-            </footer>
-        </section>
-    </div>
+                <a href="#" class="project-box">
+                    <img src="img/nextcord.png" alt="">
+                    <div class="project-info">
+                        <h2>Nextcord</h2>
+                        <p>Nextcord ist eine Bibliothek, die ich gerade lerne und die ich für meinen Tina-Bot verwenden werde.</p>
+                        <p>Ich beginne einige einfache und öffentliche Projekte, um den Buchladen gut kennenzulernen.</p>
+                        <p>Ich werde alle meine kleinen Projekte mit Nextcord als Open Source und zum Herunterladen bereitstellen.</p>
+                    </div>
+                </a>
+            </section>
+        </div>
+    </body>
     <script src="main.js"></script>
-</body>
 </html>
-
