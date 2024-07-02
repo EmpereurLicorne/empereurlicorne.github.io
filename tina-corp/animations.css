@@ -1,0 +1,36 @@
+p.name {
+	animation: glow 4s linear both;
+}
+
+.lang {
+	animation: lang 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+
+@keyframes lang {
+    0% {
+      letter-spacing: -0.5em;
+      transform: translateZ(-700px);
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      transform: translateZ(0);
+      opacity: 1;
+    }
+}
+
+@keyframes glow {
+    0%, 20%, 30%, 45%, 57%, 75%, 85%, 100% {
+        opacity: 1;
+        text-shadow: 0 0 30px rgba(255, 255, 255, 0.6), 
+                     0 0 60px rgba(255, 255, 255, 0.45), 
+                     0 0 110px rgba(255, 255, 255, 0.25), 
+                     0 0 100px rgba(255, 255, 255, 0.1);
+    }
+    10%, 20.1%, 30.1%, 45.1%, 57.1%, 75.1%, 85.1% {
+        opacity: 0;
+        text-shadow: none;
+    }
+}
