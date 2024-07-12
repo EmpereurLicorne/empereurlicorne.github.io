@@ -123,6 +123,11 @@ h1 {
   color: #FFFFFF;
 }
 
+.project-info img {
+  width: 5%; 
+  height: 5%;
+}
+
 .staff {
   display: flex;
   justify-content: center;
@@ -147,11 +152,17 @@ h1 {
   min-height: 200px;
 }
 
-.block img {
+.block-avatar {
   max-width: 50%;
   height: auto;
   border-radius: 50%;
   object-fit: cover;
+}
+
+.block-social {
+  height: 10%;
+  width: 10%;
+  padding: 10px;
 }
 
 body {
@@ -195,4 +206,12 @@ body {
       text-align: center;
       padding-top: 15px;
   }
+
+  .project-info img {
+    margin-top: 10px;
+    height: 15%;
+    width: 15%;
+    margin-left: 45%;
+  }
+
 }
