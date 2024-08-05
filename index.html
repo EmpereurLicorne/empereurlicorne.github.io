@@ -4,15 +4,18 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Empereur Licorne</title>
-        <link rel="icon" href="img/profile.png" type="image/png">
+        <link rel="icon" href="assets/img/favicon/favicon.ico" type="image/x-icon">
+        <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16x16.png">
+        <link rel="apple-touch-icon" href="assets/img/favicon/apple-touch-icon.png">
+        <link rel="manifest" href="assets/img/favicon/site.webmanifest">
         <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="animations.css">
+        <link rel="stylesheet" href="assets/animations.css">
     </head>
     <body>
-        <div class="profile">
+        <div class="page">
 
             <!--Sections français-->
-
             <section id="fr" style="display: none;">
                 <div class="lang">
                     <a href="#" class="lang_active" onclick="choose_lang('fr')">fr</a>
@@ -22,58 +25,84 @@
                     <a href="#" onclick="choose_lang('de')">de</a>
                 </div>
                 <div class="top-part">
-                    <img src="img/profile.png" alt="">
+                    <img src="assets/img/profile.png" alt="">
                     <p class="name">Empereur Licorne</p>
                 </div>
                 <hr>
                 <div class="bio">
                     <p id="text_fr"></p>
-                    <p id="heure_fr"></p>
+                    <p id="easter_egg_fr"></p>
                     <p>Je suis en cours d'élaboration de plusieurs projets dans le domaine informatique dont principalement mon projet n°I qui est la 'Tina Corp'.</p>
                 </div>
                 <hr>
-                <div class="projects">
-                    <h1>Projects :</h1>
-                    <a href="tina-corp/index.html" class="project-box">
-                        <img src="img/tina_corps_logo_1.png" alt="">
-                        <div class="project-info">
-                            <h2>Tina Corp</h2>
-                            <p>Tina Corp est une organisations que je développe et supervise.</p>
-                            <p>J'assure de son bon développement et de sa maintenance.</p>
-                            <p>C'est l'un de mes plus gros projets personnel, le plus complexe et le plus amusant.</p>
-                        </div>
-                    </a>
-                    <a href="#" class="project-box">
-                        <img src="img/nextcord.png" alt="">
-                        <div class="project-info">
-                            <h2>Nextcord</h2>
-                            <p>Nextcord est une librairie que je suis entrain d'apprendre qui sera utilisé pour mon bot Tina</p>
-                            <p>Je commence quelques projets simples et publiques pour bien connaitre la librairie</p>
-                            <p>Je vais mettre tout mes petits projets avec Nextcord en open source et téléchargeable</p>
-                        </div>
-                    </a>
-                    <a href="#" class="project-box">
-                        <img src="img/Sans titre.png" alt="">
-                        <div class="project-info">
-                            <h2>StupidBot</h2>
-                            <p>StupidBot est un bot Discord avec des commandes simples mais conçu pour répondre de manière stupide.</p>
-                            <p>Dans ce projet, je n'attends pas grand-chose à part qu'il fonctionne et qu'il soit maintenu à jour de façon basique.</p>
-                            <p>Je prévois peut-être une version open source et téléchargeable.</p>
-                        </div>
-                    </a>
-                </div>
+
+                <section id="community-projects" community-section style="display: block;">
+                    <div class="community">
+                        <a class="select-community select-community-active" href="#" onclick="choose_community('community-projects', event)">Projets</a>
+                        <a class="select-community" href="#" onclick="choose_community('community-logiciels', event)">Logiciels</a>
+                        <a class="select-community" href="#" onclick="choose_community('community-blog', event)">blog</a>
+                        <a class="select-community" href="#" onclick="choose_community('community-bot', event)">Bot Discord</a>
+                    </div>
+
+                    <div class="projects" id="projects-fr">
+                        <h1>Projets</h1>
+                    </div>
+                </section>
+
+                <section id="community-logiciels" community-section style="display: none;">
+                    <div class="community">
+                        <a class="select-community" href="#" onclick="choose_community('community-projects', event)">Projets</a>
+                        <a class="select-community select-community-active" href="#" onclick="choose_community('community-logiciels', event)">Logiciels</a>
+                        <a class="select-community" href="#" onclick="choose_community('community-blog', event)">blog</a>
+                        <a class="select-community" href="#" onclick="choose_community('community-bot', event)">Bot Discord</a>
+                    </div>
+
+                    <div class="projects" id="logiciels-fr">
+                        <h1>Logiciels</h1>
+                    </div>
+                </section>
+
+                <section id="community-blog" community-section style="display: none;">
+                    <div class="community">
+                        <a class="select-community" href="#" onclick="choose_community('community-projects', event)">Projets</a>
+                        <a class="select-community" href="#" onclick="choose_community('community-logiciels', event)">Logiciels</a>
+                        <a class="select-community select-community-active" href="#" onclick="choose_community('community-blog', event)">blog</a>
+                        <a class="select-community" href="#" onclick="choose_community('community-bot', event)">Bot Discord</a>
+                    </div>
+
+                    <h1 class="blog-center">Blog</h1>
+                    <div id="blog-container-fr" class="blog-container"></div>
+                    <div class="blog-anal">
+                        <button id="remove_fr" class="button">Page précédente</button>
+                        <button id="add_fr" class="button">Page suivante</button>
+                    </div>
+                </section>
+
+                <section id="community-bot" community-section style="display: none;">
+                    <div class="community">
+                        <a class="select-community" href="#" onclick="choose_community('community-projects', event)">Projets</a>
+                        <a class="select-community" href="#" onclick="choose_community('community-logiciels', event)">Logiciels</a>
+                        <a class="select-community" href="#" onclick="choose_community('community-blog', event)">blog</a>
+                        <a class="select-community select-community-active" href="#" onclick="choose_community('community-bot', event)">Bot Discord</a>
+                    </div> 
+
+                    <div class="projects" id="bot-fr">
+                        <h1>Bot Discord</h1>
+                    </div>
+                </section>
                 <hr>
                 <div class="bottom-part">
                     <ul class="social">
-                        <li><a href="https://github.com/EmpereurLicorne" target="_blank"><img src="img/github.png" alt="GitHub" width="25" height="25"></a></li>
-                        <li><a href="https://www.instagram.com/empereur_licorne?igsh=OXVqeGYyNGdrOGFq" target="_blank"><img src="img/instagram.png" alt="Instagram" width="25" height="25"></a></li>  
+                        <li><a href="https://github.com/EmpereurLicorne" target="_blank"><img src="assets/img/github.png" alt="GitHub" width="25" height="25"></a></li>
+                        <li><a href="https://www.instagram.com/empereur_licorne?igsh=OXVqeGYyNGdrOGFq" target="_blank"><img src="assets/img/instagram.png" alt="Instagram" width="25" height="25"></a></li>  
                     </ul>
                 </div>
-                <p class="version">Version 1.1.2</p>
+                <p class="version">Version 1.2.0</p>
             </section>
 
-            <!--Sections englais-->
 
+
+            <!--Sections englais-->
             <section id="en" style="display: none;">
                 <div class="lang">
                     <a href="#" onclick="choose_lang('fr')">fr</a>
@@ -83,57 +112,84 @@
                     <a href="#" onclick="choose_lang('de')">de</a>
                 </div>
                 <div class="top-part">
-                    <img src="img/profile.png" alt="">
+                    <img src="assets/img/profile.png" alt="">
                     <p class="name">Empereur Licorne/Kaiser Einhorn</p>
                 </div>
                 <hr>
                 <div class="bio">
                     <p id="text_en"></p>
-                    <p id="heure_en"></p>
+                    <p id="easter_egg_en"></p>
                     <p>I'm currently working on several projects in the IT field, the main one being my n°I project, which is the 'Tina Corp'.</p>
                 </div>
                 <hr>
-                <div class="projects">
-                    <h1>Projects :</h1>
-                    <a href="tina-corp/index.html" class="project-box">
-                        <img src="img/tina_corps_logo_1.png" alt="">
-                        <div class="project-info">
-                            <h2>Tina Corp</h2>
-                            <p>Tina Corp is an organization that I develop and supervise.</p>
-                            <p>I ensure its proper development and maintenance.</p>
-                            <p>It's one of my biggest personal projects, the most complex and the most fun.</p>
-                        </div>
-                    </a>
-                    <a href="#" class="project-box">
-                        <img src="img/nextcord.png" alt="">
-                        <div class="project-info">
-                            <h2>Nextcord</h2>
-                            <p>Nextcord is a library I'm learning to use for my Tina bot.</p>
-                            <p>I'm starting a few simple public projects to get to know the bookshop.</p>
-                            <p>I'm going to make all of my little projects with Nextcord open source and available for download.</p>
-                        </div>
-                    </a>
-                    <a href="#" class="project-box">
-                        <img src="img/Sans titre.png" alt="">
-                        <div class="project-info">
-                            <h2>StupidBot</h2>
-                            <p>StupidBot is a Discord bot with simple commands but designed to respond in a stupid way.</p>
-                            <p>I don't expect much from this project other than that it works and is kept up to date in a basic way.</p>
-                            <p>I may be planning an open-source, downloadable version.</p>
-                        </div>
-                    </a>
-                </div>
+
+                <section id="community-projects" community-section style="display: block;">
+                    <div class="community">
+                        <a class="select-community select-community-active" href="#" onclick="choose_community('community-projects', event)">Projects</a>
+                        <a class="select-community" href="#" onclick="choose_community('community-logiciels', event)">Software</a>
+                        <a class="select-community" href="#" onclick="choose_community('community-blog', event)">blog</a>
+                        <a class="select-community" href="#" onclick="choose_community('community-bot', event)">Bot Discord</a>
+                    </div>
+
+                    <div class="projects" id="projects-en">
+                        <h1>Projects</h1>
+                    </div>
+                </section>
+
+                <section id="community-logiciels" community-section style="display: none;">
+                    <div class="community">
+                        <a class="select-community" href="#" onclick="choose_community('community-projects', event)">Projects</a>
+                        <a class="select-community select-community-active" href="#" onclick="choose_community('community-logiciels', event)">Software</a>
+                        <a class="select-community" href="#" onclick="choose_community('community-blog', event)">blog</a>
+                        <a class="select-community" href="#" onclick="choose_community('community-bot', event)">Bot Discord</a>
+                    </div>
+
+                    <div class="projects" id="logiciels-en">
+                        <h1>Software</h1>
+                    </div>
+                </section>
+
+                <section id="community-blog" community-section style="display: none;">
+                    <div class="community">
+                        <a class="select-community" href="#" onclick="choose_community('community-projects', event)">Projects</a>
+                        <a class="select-community" href="#" onclick="choose_community('community-logiciels', event)">Software</a>
+                        <a class="select-community select-community-active" href="#" onclick="choose_community('community-blog', event)">blog</a>
+                        <a class="select-community" href="#" onclick="choose_community('community-bot', event)">Bot Discord</a>
+                    </div>
+
+                    <h1 class="blog-center">Blog</h1>
+                    <div id="blog-container-en" class="blog-container"></div>
+                    <div>
+                        <button id="add_en" class="button">next page</button>
+                        <button id="remove_en" class="button">Previous page</button>
+                    </div>
+                </section>
+
+                <section id="community-bot" community-section style="display: none;">
+                    <div class="community">
+                        <a class="select-community" href="#" onclick="choose_community('community-projects', event)">Projects</a>
+                        <a class="select-community" href="#" onclick="choose_community('community-logiciels', event)">Software</a>
+                        <a class="select-community" href="#" onclick="choose_community('community-blog', event)">blog</a>
+                        <a class="select-community select-community-active" href="#" onclick="choose_community('community-bot', event)">Bot Discord</a>
+                    </div>
+
+                    <div class="projects" id="bot-en">
+                        <h1>Bot Discord</h1>
+                    </div>
+                </section>
                 <hr>
                 <div class="bottom-part">
                     <ul class="social">
-                        <li><a href="https://github.com/EmpereurLicorne" target="_blank"><img src="img/github.png" alt="GitHub" width="25" height="25"></a></li>
-                        <li><a href="https://www.instagram.com/empereur_licorne?igsh=OXVqeGYyNGdrOGFq" target="_blank"><img src="img/instagram.png" alt="Instagram" width="25" height="25"></a></li>  
+                        <li><a href="https://github.com/EmpereurLicorne" target="_blank"><img src="assets/img/github.png" alt="GitHub" width="25" height="25"></a></li>
+                        <li><a href="https://www.instagram.com/empereur_licorne?igsh=OXVqeGYyNGdrOGFq" target="_blank"><img src="assets/img/instagram.png" alt="Instagram" width="25" height="25"></a></li>  
+                    </ul>
                 </div>
-                <p class="version">Version 1.1.2</p>
+                <p class="version">Version 1.2.0</p>
             </section>
 
-            <!--Sections allemand-->
 
+
+            <!--Sections allemand-->
             <section id="de" style="display: none;">
                 <div class="lang">
                     <a href="#" onclick="choose_lang('fr')">fr</a>
@@ -143,54 +199,83 @@
                     <a href="#" class="lang_active" onclick="choose_lang('de')">de</a>
                 </div>
                 <div class="top-part">
-                    <img src="img/profile.png" alt="">
+                    <img src="assets/img/profile.png" alt="">
                     <p class="name">Kaiser Einhorn</p>
                 </div>
                 <hr>
                 <div class="bio">
                     <p id="text_de"></p>
-                    <p id="heure_de"></p>
+                    <p id="easter_egg_de"></p>
                     <p>Ich bin dabei, mehrere Projekte im IT-Bereich zu entwickeln, darunter hauptsächlich mein Projekt Nr. I, das die 'Tina Corp' ist.</p>
                 </div>
                 <hr>
-                <div class="projects">
-                    <a href="tina-corp/index.html" class="project-box">
-                        <img src="img/tina_corps_logo_1.png" alt="">
-                        <div class="project-info">
-                            <h2>Tina Corp</h2>
-                            <p>Tina Corp ist eine Organisation, die ich entwickle und beaufsichtige.</p>
-                            <p>Ich sorge dafür, dass sie sich gut entwickelt und gepflegt wird.</p>
-                            <p>Es ist eines meiner größten persönlichen Projekte, das komplexeste und das was am meisten Spaß macht</p>
-                        </div>
-                    </a>
-                    <a href="#" class="project-box">
-                        <img src="img/nextcord.png" alt="">
-                        <div class="project-info">
-                            <h2>Nextcord</h2>
-                            <p>Nextcord ist eine Bibliothek, die ich gerade lerne und die ich für meinen Tina-Bot verwenden werde.</p>
-                            <p>Ich beginne einige einfache und öffentliche Projekte, um den Buchladen gut kennenzulernen.</p>
-                            <p>Ich werde alle meine kleinen Projekte mit Nextcord als Open Source und zum Herunterladen bereitstellen.</p>
-                        </div>
-                    </a>
-                    <a href="#" class="project-box">
-                        <img src="img/Sans titre.png" alt="">
-                        <div class="project-info">
-                            <h2>StupidBot</h2>
-                            <p>StupidBot ist ein Discord-Bot mit einfachen Befehlen, der aber darauf ausgelegt ist, auf dumme Art und Weise zu antworten.</p>
-                            <p>In diesem Projekt erwarte ich nicht viel, außer dass es funktioniert und auf grundlegende Weise auf dem neuesten Stand gehalten wird.</p>
-                            <p>Vielleicht plane ich eine Open-Source-Version, die man herunterladen kann.</p>
-                        </div>
-                    </a>
-                </div>
+
+                <section id="community-projects" community-section style="display: block;">
+                    <div class="community">
+                        <a class="select-community select-community-active" href="#" onclick="choose_community('community-projects', event)">Projekte</a>
+                        <a class="select-community" href="#" onclick="choose_community('community-logiciels', event)">Logiciels</a>
+                        <a class="select-community" href="#" onclick="choose_community('community-blog', event)">blog</a>
+                        <a class="select-community" href="#" onclick="choose_community('community-bot', event)">Bot Discord</a>
+                    </div>
+
+                    <div class="projects" id="projects-de">
+                        <h1>Projekte</h1>
+                    </div>
+                </section>
+
+                <section id="community-logiciels" community-section style="display: none;">
+                    <div class="community">
+                        <a class="select-community" href="#" onclick="choose_community('community-projects', event)">Projekte</a>
+                        <a class="select-community select-community-active" href="#" onclick="choose_community('community-logiciels', event)">Software</a>
+                        <a class="select-community" href="#" onclick="choose_community('community-blog', event)">blog</a>
+                        <a class="select-community" href="#" onclick="choose_community('community-bot', event)">Bot Discord</a>
+                    </div>
+
+                    <div class="projects" id="logiciels-de">
+                        <h1>Software</h1>
+                    </div>
+                </section>
+
+                <section id="community-blog" community-section style="display: none;">
+                    <div class="community">
+                        <a class="select-community" href="#" onclick="choose_community('community-projects', event)">Projekte</a>
+                        <a class="select-community" href="#" onclick="choose_community('community-logiciels', event)">Software</a>
+                        <a class="select-community select-community-active" href="#" onclick="choose_community('community-blog', event)">blog</a>
+                        <a class="select-community" href="#" onclick="choose_community('community-bot', event)">Bot Discord</a>
+                    </div>
+
+                    <h1 class="blog-center">Blog</h1>
+                    <div id="blog-container-de" class="blog-container"></div>
+                    <button id="add_de" class="button">Nächste Seite</button>
+                    <button id="remove_de" class="button">Vorherige Seite</button>
+                </section>
+
+                <section id="community-bot" community-section style="display: none;">
+                    <div class="community">
+                        <a class="select-community" href="#" onclick="choose_community('community-projects', event)">Projekte</a>
+                        <a class="select-community" href="#" onclick="choose_community('community-logiciels', event)">Software</a>
+                        <a class="select-community" href="#" onclick="choose_community('community-blog', event)">blog</a>
+                        <a class="select-community select-community-active" href="#" onclick="choose_community('community-bot', event)">Bot Discord</a>
+                    </div>
+
+                    <div class="projects" id="bot-de">
+                        <h1>Bot Discord</h1>
+                    </div>
+                </section>
                 <hr>
                 <div class="bottom-part">
                     <ul class="social">
-                        <li><a href="https://github.com/EmpereurLicorne" target="_blank"><img src="img/github.png" alt="GitHub" width="25" height="25"></a></li>
-                        <li><a href="https://www.instagram.com/empereur_licorne?igsh=OXVqeGYyNGdrOGFq" target="_blank"><img src="img/instagram.png" alt="Instagram" width="25" height="25"></a></li>  
+                        <li><a href="https://github.com/EmpereurLicorne" target="_blank"><img src="assets/img/github.png" alt="GitHub" width="25" height="25"></a></li>
+                        <li><a href="https://www.instagram.com/empereur_licorne?igsh=OXVqeGYyNGdrOGFq" target="_blank"><img src="assets/img/instagram.png" alt="Instagram" width="25" height="25"></a></li>  
+                    </ul>
                 </div>
-                <p class="version">Version 1.1.2</p>
+                <p class="version">Version 1.2.0</p>
             </section>
         </div>
     </body>
+    <script src="assets/config.js"></script>
     <script src="main.js"></script>
+    <script src="assets/blog/blog.js"></script>
 </html>
+
+

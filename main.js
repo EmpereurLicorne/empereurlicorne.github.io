@@ -16,7 +16,7 @@ function set_lang() {
 }
 
 function choose_lang(lang) {
-    var sections = document.querySelectorAll(".profile > section");
+    var sections = document.querySelectorAll(".page > section");
     var section = document.getElementById(lang);
     sections.forEach(function(section) {
         if (section.id === lang) {
@@ -75,12 +75,31 @@ function easter_egg() {
     var messages = (heure >= 5 && heure <= 18) ? messageJour : messageSoir;
     
     for (var lang in messages) {
-      document.getElementById(`heure_${lang}`).textContent = messages[lang];
+      document.getElementById(`easter_egg_${lang}`).textContent = messages[lang];
     }
 }
 
+function choose_community(sectionId, event) {
+  event.preventDefault();
+  var sections = document.querySelectorAll('[community-section]');
+
+  sections.forEach(function(section) {
+      if (section.id == sectionId) {
+        section.style.display = 'block';
+      } else {
+        section.style.display = 'none';
+      }
+  });
+
+  var links = document.querySelectorAll('.select_community');
+    links.forEach(function(link) {
+        link.classList.remove('select_community_active');
+    });
+    event.target.classList.add('select_community_active');
+}
+
 choose_lang(set_lang());
-easter_egg()
-selectMots()
-setInterval(selectMots, 10000)
+easter_egg();
+selectMots();
+setInterval(selectMots, 10000);
 setInterval(easter_egg(), 5000);
