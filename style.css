@@ -247,7 +247,7 @@ li > a {
 }
 
 @media (max-width: 600px) {
-    .profile {
+    .page {
         width: 100%;
         margin: 0 auto;
         border-radius: 0 0 0 0;
