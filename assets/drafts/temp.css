@@ -1,15 +1,26 @@
 :root {
     --card: linear-gradient(to bottom left, #FFD3E6, #E0BBFF, #B4D8E7, #B2F7C9, #FFFACD, #FFCCCC, #AEC6CF);
 }
-
 html, body {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
     height: 100%;
-    background: url(assets/img/font.jpg);
+    background: url('../img/font.jpg'); /* Assurez-vous que le chemin est correct */
     background-size: cover;
     background-position: center;
+    overflow: auto;
+}
+
+#container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 9999;
+    background: radial-gradient(circle, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 0%);
 }
 
 .page {
@@ -21,8 +32,15 @@ html, body {
     min-height: 300px;
     padding: 0;
     border-radius: 20px 0 20px 0;
+    position: relative;
+    z-index: 1; /* Assure que la page est au-dessus de #container */
 }
 
+.page.hidden {
+    opacity: 0;
+}
+
+/* Styles pour les autres éléments */
 .lang {
     margin-left: 15px;
 }
@@ -142,7 +160,7 @@ hr {
     color: #000000;
 }
 
-.select-community:hover{
+.select-community:hover {
     text-decoration: overline;
 }
 
@@ -184,7 +202,7 @@ hr {
     text-decoration: none;
     color: #000000;
 }
-  
+
 .project-info h2 {
     margin: 0;
     transition: 1s;
@@ -248,7 +266,6 @@ hr {
     margin-left: 1%;
 }
 
-
 .author .date {
     width: 100%;
     text-align: right;
@@ -274,7 +291,6 @@ hr {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
 }
 
 .bottom-part > ul.social {
@@ -298,7 +314,7 @@ li > a {
 }
 
 .version {
-  text-align: center;
+    text-align: center;
 }
 
 @media (max-width: 600px) {
@@ -313,36 +329,36 @@ li > a {
     }
 
     .project-box {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 75%;
-      margin-top: 20px;
-      transition: box-shadow 1s;
-      text-decoration: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 75%;
+        margin-top: 20px;
+        transition: box-shadow 1s;
+        text-decoration: none;
     }
 
     .project-info {
-      flex-grow: 1; 
-      text-decoration: none;
-      color: #000000;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+        flex-grow: 1; 
+        text-decoration: none;
+        color: #000000;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .project-info h2, .project-info p {
-      margin: 0;
-      text-align: center;
+        margin: 0;
+        text-align: center;
     }
 
     .project-info h2 {
-      color: #0026ff;
-      text-decoration: underline;
+        color: #0026ff;
+        text-decoration: underline;
     }
 
     .project-box {
-      animation: box 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+        animation: box 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
     }
 
     .blog-box {
@@ -367,5 +383,4 @@ li > a {
     .blog-box p {
         margin-left: 1%;
     }
-
 }
