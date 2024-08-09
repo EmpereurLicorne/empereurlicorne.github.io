@@ -1,6 +1,6 @@
 let clickCount = 0;
 let switchLinkVisible = false;
-let testscript = false;
+let testscript = false
 
 function createSwitchLink() {
     const topPart = document.querySelector('.top-part');
@@ -21,35 +21,37 @@ function createSwitchLink() {
 
         topPart.appendChild(switchContainer);
 
-        switchContainer.addEventListener('click', function(event) {
-            if (event.pointerType === 'mouse') { // Vérifie que l'événement provient de la souris
-                if (switchContainer.classList.contains('on')) {
-                    switchContainer.classList.remove('on');
-                    // switch désactivé
-                    
-                    var newStyle = document.getElementById("style");
-                    newStyle.href = "assets/drafts/temp.css";
+        switchContainer.addEventListener('click', function() {
+            if (switchContainer.classList.contains('on')) {
+                switchContainer.classList.remove('on');
+                 //switch désactivé
 
-                    var newDiv = document.createElement('div');
-                    newDiv.id = 'container';
+                
+                var newStyle = document.getElementById("style");
+                newStyle.href = "assets/drafts/temp.css";
 
-                    var pageDiv = document.querySelector('.page');
-                    pageDiv.parentNode.insertBefore(newDiv, pageDiv);
+                var newDiv = document.createElement('div');
+                newDiv.id = 'container';
 
-                    testscript = true;
+                var pageDiv = document.querySelector('.page');
+                pageDiv.parentNode.insertBefore(newDiv, pageDiv);
 
-                } else {
-                    switchContainer.classList.add('on');
-                    // switch activé
+                testscript = true
 
-                    var newStyle = document.getElementById("style");
-                    newStyle.href = "style.css";
 
-                    var containerDiv = document.getElementById('container');
-                    containerDiv.parentNode.removeChild(containerDiv);
+            } else {
+                switchContainer.classList.add('on');
+                //switch activer
 
-                    testscript = false;
-                }
+
+                var newStyle = document.getElementById("style");
+                newStyle.href = "style.css";
+
+                var containerDiv = document.getElementById('container');
+                containerDiv.parentNode.removeChild(containerDiv);
+
+                testscript = false
+
             }
         });
     } else {
