@@ -93,8 +93,6 @@ function updateTorchEffect(e) {
         document.querySelector('#container').style.background = cardEffect;
 
         storedMousePosition = { x, y };
-
-        console.log("phone");
     } else {
         x = e.clientX;
         y = e.clientY;
@@ -107,8 +105,6 @@ function updateTorchEffect(e) {
         document.querySelector('#container').style.background = cardEffect;
 
         storedMousePosition = { x, y };
-
-        console.log("ordi");
     }
 }
 
