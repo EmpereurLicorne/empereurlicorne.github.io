@@ -38,7 +38,9 @@ function createSwitchLink() {
 
                 testscript = true
 
-
+                effectEnabled = !effectEnabled;
+                document.addEventListener('mousemove', updateTorchEffect);
+                reactivateTorchEffect();
             } else {
                 switchContainer.classList.add('on');
                 //switch activer
@@ -68,36 +70,78 @@ if (imgElement) {
     });
 }
 
-let effectEnabled = true;
+let effectEnabled = false;
+let storedMousePosition = { x: window.innerWidth / 2, y: window.innerHeight / 2 }; // Initialisation à la position centrale
 
 function updateTorchEffect(e) {
     if (!testscript || !effectEnabled) return;
 
-    const x = e.clientX;
-    const y = e.clientY;
-    
+    const isTouchEvent = e.type.startsWith('touch');
+
+    let x, y;
+
+    if (isTouchEvent) {
+        const touch = e.touches[0] || e.changedTouches[0];
+        x = touch.clientX;
+        y = touch.clientY;
+
+        const maxRadius = 1000;
+        const radius = Math.min(maxRadius, 0.2 * window.innerWidth);
+
+        const cardEffect = `radial-gradient(circle at ${x}px ${y}px, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) ${radius}px)`;
+
+        document.querySelector('#container').style.background = cardEffect;
+
+        storedMousePosition = { x, y };
+
+        console.log("phone");
+    } else {
+        x = e.clientX;
+        y = e.clientY;
+
+        const maxRadius = 200;
+        const radius = Math.min(maxRadius, 0.2 * window.innerWidth);
+
+        const cardEffect = `radial-gradient(circle at ${x}px ${y}px, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) ${radius}px)`;
+
+        document.querySelector('#container').style.background = cardEffect;
+
+        storedMousePosition = { x, y };
+
+        console.log("ordi");
+    }
+}
+
+function reactivateTorchEffect() {
+    if (!testscript || !effectEnabled) return;
+
+    const { x, y } = storedMousePosition;
+
     const maxRadius = 200;
     const radius = Math.min(maxRadius, 0.2 * window.innerWidth);
-    
+
     const cardEffect = `radial-gradient(circle at ${x}px ${y}px, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) ${radius}px)`;
 
     document.querySelector('#container').style.background = cardEffect;
 }
-
-document.addEventListener('mousemove', updateTorchEffect);
-
-document.addEventListener('contextmenu', function(e) {
+function toggleEffect(e) {
     e.preventDefault();
     if (testscript) {
         effectEnabled = !effectEnabled;
         if (!effectEnabled) {
             document.querySelector('#container').style.background = 'rgba(0, 0, 0, 1)';
+            document.removeEventListener('mousemove', updateTorchEffect);
         } else {
             document.addEventListener('mousemove', updateTorchEffect);
+            reactivateTorchEffect();
         }
     }
-});
+}
 
-document.addEventListener('wheel', function(e) {
-    e.preventDefault();
-}, { passive: false });
+function updateMousePosition(e) {
+    storedMousePosition = { x: e.clientX, y: e.clientY };
+}
+
+document.addEventListener('mousemove', updateMousePosition);
+document.addEventListener('mousemove', updateTorchEffect);
+document.addEventListener('contextmenu', toggleEffect);
