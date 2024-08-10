@@ -76,14 +76,11 @@ let storedMousePosition = { x: window.innerWidth / 2, y: window.innerHeight / 2 
 function updateTorchEffect(e) {
     if (!testscript || !effectEnabled) return;
 
-    const isTouchEvent = e.type.startsWith('touch');
+    const isDesktop = window.innerWidth > 1024;
 
-    let x, y;
-
-    if (isTouchEvent) {
-        const touch = e.touches[0] || e.changedTouches[0];
-        x = touch.clientX;
-        y = touch.clientY;
+    if (isDesktop) {
+        x = e.clientX;
+        y = e.clientY;
 
         const maxRadius = 1000;
         const radius = Math.min(maxRadius, 0.2 * window.innerWidth);
@@ -93,6 +90,7 @@ function updateTorchEffect(e) {
         document.querySelector('#container').style.background = cardEffect;
 
         storedMousePosition = { x, y };
+
     } else {
         x = e.clientX;
         y = e.clientY;
@@ -105,6 +103,7 @@ function updateTorchEffect(e) {
         document.querySelector('#container').style.background = cardEffect;
 
         storedMousePosition = { x, y };
+
     }
 }
 
