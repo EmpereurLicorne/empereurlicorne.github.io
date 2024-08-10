@@ -76,14 +76,14 @@ let storedMousePosition = { x: window.innerWidth / 2, y: window.innerHeight / 2 
 function updateTorchEffect(e) {
     if (!testscript || !effectEnabled) return;
 
-    const isDesktop = window.innerWidth > 1024;
+    const isDesktop = window.innerWidth < 1024;
 
     if (isDesktop) {
         x = e.clientX;
         y = e.clientY;
 
-        const maxRadius = 1000;
-        const radius = Math.min(maxRadius, 0.2 * window.innerWidth);
+        const maxRadius = 2000;
+        const radius = Math.min(maxRadius, 0.8 * window.innerWidth);
 
         const cardEffect = `radial-gradient(circle at ${x}px ${y}px, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) ${radius}px)`;
 
