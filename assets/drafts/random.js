@@ -42,16 +42,7 @@ function createSwitchLink() {
             } else {
                 switchContainer.classList.add('on');
                 //switch activer
-
-
-                var newStyle = document.getElementById("style");
-                newStyle.href = "style.css";
-
-                var containerDiv = document.getElementById('container');
-                containerDiv.parentNode.removeChild(containerDiv);
-
-                testscript = false
-
+                location.reload();
             }
         });
     } else {
