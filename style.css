@@ -67,61 +67,6 @@ hr {
     align-self: center;
 }
 
-.switch {
-    display: inline-block;
-    width: 34px;
-    height: 20px;
-    position: relative;
-    cursor: pointer;
-}
-
-.slider {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    transition: .4s;
-    border-radius: 34px;
-}
-
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 16px;
-    width: 16px;
-    left: 2px;
-    bottom: 2px;
-    background-color: white;
-    transition: .4s;
-    border-radius: 50%;
-}
-
-.switch a {
-    margin-left: 10px;
-    color: #2196F3;
-    text-decoration: none;
-    transition: color 0.4s, font-weight 0.4s;
-}
-
-.switch.on .slider {
-    background-color: #2196F3;
-}
-
-.switch.on .slider:before {
-    transform: translateX(14px);
-}
-
-.switch.on a {
-    color: green;
-    font-weight: bold;
-}
-
-.switch a:hover {
-    text-decoration: underline;
-}
-
 .bio {
     padding: 1px;
 }
@@ -301,6 +246,61 @@ li > a {
   text-align: center;
 }
 
+.switch {
+    display: inline-block;
+    width: 34px;
+    height: 20px;
+    position: relative;
+    cursor: pointer;
+}
+
+.slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+.switch a {
+    margin-left: 10px;
+    color: #2196F3;
+    text-decoration: none;
+    transition: color 0.4s, font-weight 0.4s;
+}
+
+.switch.on .slider {
+    background-color: #2196F3;
+}
+
+.switch.on .slider:before {
+    transform: translateX(14px);
+}
+
+.switch.on a {
+    color: green;
+    font-weight: bold;
+}
+
+.switch a:hover {
+    text-decoration: underline;
+}
+
 @media (max-width: 600px) {
     .profile {
         width: 100%;
@@ -310,6 +310,14 @@ li > a {
 
     .top-part > p.name {
         font-size: 20px;
+    }
+
+    .top-part > img {
+        width: 25%;
+        height: 25%;
+        object-fit: cover;
+        border-radius: 50%;
+        align-self: center;
     }
 
     .project-box {
