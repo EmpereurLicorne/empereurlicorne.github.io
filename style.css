@@ -7,7 +7,7 @@ html, body {
     padding: 0;
     margin: 0;
     height: 100%;
-    background: url(assets/img/font.jpg);
+    background-image: url(assets/img/font.jpg);
     background-size: cover;
     background-position: center;
 }
@@ -20,11 +20,11 @@ html, body {
     grid-template-rows: auto 1fr auto;
     min-height: 300px;
     padding: 0;
-    border-radius: 20px 0 20px 0;
+    border-radius: 0 1em 0 1em;
 }
 
 .lang {
-    margin-left: 15px;
+    margin-left: 5px;
 }
 
 .lang a, .lang p {
@@ -60,8 +60,8 @@ hr {
 }
 
 .top-part > img {
-    width: 12.5%;
-    height: 12.5%;
+    width: 11%;
+    height: 11%;
     object-fit: cover;
     border-radius: 50%;
     align-self: center;
@@ -246,134 +246,16 @@ li > a {
   text-align: center;
 }
 
-.switch {
-    display: inline-block;
-    width: 34px;
-    height: 20px;
-    position: relative;
-    cursor: pointer;
-}
-
-.slider {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    transition: .4s;
-    border-radius: 34px;
-}
-
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 16px;
-    width: 16px;
-    left: 2px;
-    bottom: 2px;
-    background-color: white;
-    transition: .4s;
-    border-radius: 50%;
-}
-
-.switch a {
-    margin-left: 10px;
-    color: #2196F3;
-    text-decoration: none;
-    transition: color 0.4s, font-weight 0.4s;
-}
-
-.switch.on .slider {
-    background-color: #2196F3;
-}
-
-.switch.on .slider:before {
-    transform: translateX(14px);
-}
-
-.switch.on a {
-    color: green;
-    font-weight: bold;
-}
-
-.switch a:hover {
-    text-decoration: underline;
-}
-
 @media (max-width: 600px) {
-    .profile {
+
+    .page {
         width: 100%;
         margin: 0 auto;
         border-radius: 0 0 0 0;
     }
 
-    .top-part > p.name {
-        font-size: 20px;
-    }
-
     .top-part > img {
-        width: 25%;
-        height: 25%;
-        object-fit: cover;
-        border-radius: 50%;
-        align-self: center;
+        width: 6em;
+        height: 6em;
     }
-
-    .project-box {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 75%;
-      margin-top: 20px;
-      transition: box-shadow 1s;
-      text-decoration: none;
-    }
-
-    .project-info {
-      flex-grow: 1; 
-      text-decoration: none;
-      color: #000000;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .project-info h2, .project-info p {
-      margin: 0;
-      text-align: center;
-    }
-
-    .project-info h2 {
-      color: #0026ff;
-      text-decoration: underline;
-    }
-
-    .project-box {
-      animation: box 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-    }
-
-    .blog-box {
-        width: 90%;
-    }
-
-    .blog-box img {
-        width: 100%;
-        height: auto;
-        margin: 10px 0;
-    }
-
-    .author img {
-        height: 15%;
-        width: 15%;
-    }
-
-    .author .date {
-        margin-right: 1%;
-    }
-
-    .blog-box p {
-        margin-left: 1%;
-    }
-
 }

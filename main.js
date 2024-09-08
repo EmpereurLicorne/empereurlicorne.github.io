@@ -27,37 +27,49 @@ function choose_lang(lang) {
     });
 }
 
-function selectMots() {
-    for (var lang in phrases) {
-      var elementMot = document.getElementById(`text_${lang}`);
-      var { phrase, mots, index } = phrases[lang];
-      elementMot.textContent = phrase + " " + mots[(index - 1 + mots.length) % mots.length];
-      actionPhrase(lang, mots[index]);
-      phrases[lang].index = (index + 1) % mots.length;
+function select_phrase() {
+    try {
+        for (var lang in phrases) {
+            var elementMot = document.getElementById(`text_${lang}`);
+            if (!elementMot) return;
+  
+            var { phrase, mots, index } = phrases[lang];
+            elementMot.textContent = phrase + " " + mots[(index - 1 + mots.length) % mots.length];
+            action_phrase(lang, mots[index]);
+            phrases[lang].index = (index + 1) % mots.length;
+        }
+    } catch (error) {
+        return;
     }
 }
   
-function actionPhrase(lang, mot) {
-    var elementMot = document.getElementById(`text_${lang}`);
-    var phrase = phrases[lang].phrase;
-    var index = 0;
+function action_phrase(lang, mot) {
+    try {
+        var elementMot = document.getElementById(`text_${lang}`);
+        if (!elementMot) return;
   
-    var effacement = setInterval(function() {
-      if (elementMot.textContent.length > phrase.length) {
-        elementMot.textContent = elementMot.textContent.slice(0, -1);
-      } else {
-        clearInterval(effacement);
+        var phrase = phrases[lang].phrase;
+        var index = 0;
   
-        var reecriture = setInterval(function() {
-          if (index < mot.length) {
-            elementMot.textContent = phrase + " " + mot.slice(0, index + 1);
-            index++;
-          } else {
-            clearInterval(reecriture);
-          }
+        var effacement = setInterval(function() {
+            if (elementMot.textContent.length > phrase.length) {
+                elementMot.textContent = elementMot.textContent.slice(0, -1);
+            } else {
+                clearInterval(effacement);
+  
+                var reecriture = setInterval(function() {
+                    if (index < mot.length) {
+                        elementMot.textContent = phrase + " " + mot.slice(0, index + 1);
+                        index++;
+                    } else {
+                        clearInterval(reecriture);
+                    }
+                }, 50);
+            }
         }, 50);
-      }
-    }, 50);
+    } catch (error) {
+        return;
+    }
 }
 
 function easter_egg() {
@@ -80,26 +92,26 @@ function easter_egg() {
 }
 
 function choose_community(sectionId, event) {
-  event.preventDefault();
-  var sections = document.querySelectorAll('[community-section]');
-
-  sections.forEach(function(section) {
-      if (section.id == sectionId) {
-        section.style.display = 'block';
-      } else {
-        section.style.display = 'none';
-      }
-  });
-
-  var links = document.querySelectorAll('.select_community');
-    links.forEach(function(link) {
-        link.classList.remove('select_community_active');
+    event.preventDefault();
+    var sections = document.querySelectorAll('[community-section]');
+  
+    sections.forEach(function(section) {
+        if (section.id == sectionId) {
+          section.style.display = 'block';
+        } else {
+          section.style.display = 'none';
+        }
     });
-    event.target.classList.add('select_community_active');
+  
+    var links = document.querySelectorAll('.select_community');
+      links.forEach(function(link) {
+          link.classList.remove('select_community_active');
+      });
+      event.target.classList.add('select_community_active');
 }
 
 choose_lang(set_lang());
+select_phrase();
 easter_egg();
-selectMots();
-setInterval(selectMots, 10000);
 setInterval(easter_egg(), 5000);
+setInterval(select_phrase, 10000);

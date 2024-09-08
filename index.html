@@ -9,15 +9,15 @@
         <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16x16.png">
         <link rel="apple-touch-icon" href="assets/img/favicon/apple-touch-icon.png">
         <link rel="manifest" href="assets/img/favicon/site.webmanifest">
-        <link rel="stylesheet" href="style.css" id="style">
+        <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="assets/animations.css">
     </head>
-    <body>
-        
-        <div class="page">
+    <body> 
 
+
+        <div class="page">
             <!--Sections français-->
-            <section id="fr" style="display: none;">
+            <section id="fr" style="display: block;">
                 <div class="lang">
                     <a href="#" class="lang_active" onclick="choose_lang('fr')">fr</a>
                     <p>/</p>
@@ -33,16 +33,16 @@
                 <div class="bio">
                     <p id="text_fr"></p>
                     <p id="easter_egg_fr"></p>
-                    <p>Je suis en cours d'élaboration de plusieurs projets dans le domaine informatique dont principalement mon projet n°I qui est la 'Tina Corp'.</p>
+                    <p>Je suis en cours d'élaboration de plusieurs projets dans le domaine informatique pour renforcer mes connaissances.</p>
                 </div>
                 <hr>
+
 
                 <section id="community-projects" community-section style="display: block;">
                     <div class="community">
                         <a class="select-community select-community-active" href="#" onclick="choose_community('community-projects', event)">Projets</a>
                         <a class="select-community" href="#" onclick="choose_community('community-logiciels', event)">Logiciels</a>
                         <a class="select-community" href="#" onclick="choose_community('community-blog', event)">blog</a>
-                        <a class="select-community" href="#" onclick="choose_community('community-bot', event)">Bot Discord</a>
                     </div>
 
                     <div class="projects" id="projects-fr">
@@ -55,7 +55,6 @@
                         <a class="select-community" href="#" onclick="choose_community('community-projects', event)">Projets</a>
                         <a class="select-community select-community-active" href="#" onclick="choose_community('community-logiciels', event)">Logiciels</a>
                         <a class="select-community" href="#" onclick="choose_community('community-blog', event)">blog</a>
-                        <a class="select-community" href="#" onclick="choose_community('community-bot', event)">Bot Discord</a>
                     </div>
 
                     <div class="projects" id="logiciels-fr">
@@ -68,7 +67,6 @@
                         <a class="select-community" href="#" onclick="choose_community('community-projects', event)">Projets</a>
                         <a class="select-community" href="#" onclick="choose_community('community-logiciels', event)">Logiciels</a>
                         <a class="select-community select-community-active" href="#" onclick="choose_community('community-blog', event)">blog</a>
-                        <a class="select-community" href="#" onclick="choose_community('community-bot', event)">Bot Discord</a>
                     </div>
 
                     <h1 class="blog-center">Blog</h1>
@@ -78,19 +76,6 @@
                         <button id="add_fr" class="button">Page suivante</button>
                     </div>
                 </section>
-
-                <section id="community-bot" community-section style="display: none;">
-                    <div class="community">
-                        <a class="select-community" href="#" onclick="choose_community('community-projects', event)">Projets</a>
-                        <a class="select-community" href="#" onclick="choose_community('community-logiciels', event)">Logiciels</a>
-                        <a class="select-community" href="#" onclick="choose_community('community-blog', event)">blog</a>
-                        <a class="select-community select-community-active" href="#" onclick="choose_community('community-bot', event)">Bot Discord</a>
-                    </div> 
-
-                    <div class="projects" id="bot-fr">
-                        <h1>Bot Discord</h1>
-                    </div>
-                </section>
                 <hr>
                 <div class="bottom-part">
                     <ul class="social">
@@ -98,12 +83,11 @@
                         <li><a href="https://www.instagram.com/empereur_licorne?igsh=OXVqeGYyNGdrOGFq" target="_blank"><img src="assets/img/instagram.png" alt="Instagram" width="25" height="25"></a></li>  
                     </ul>
                 </div>
-                <p class="version">Version 1.2.0</p>
+                <p class="version">Version 1.2.1</p>
             </section>
 
 
-
-            <!--Sections englais-->
+            <!--Sections anglais-->
             <section id="en" style="display: none;">
                 <div class="lang">
                     <a href="#" onclick="choose_lang('fr')">fr</a>
@@ -120,16 +104,16 @@
                 <div class="bio">
                     <p id="text_en"></p>
                     <p id="easter_egg_en"></p>
-                    <p>I'm currently working on several projects in the IT field, the main one being my n°I project, which is the 'Tina Corp'.</p>
+                    <p>I'm currently working on several projects in the IT field to reinforce my knowledge.</p>
                 </div>
                 <hr>
+
 
                 <section id="community-projects" community-section style="display: block;">
                     <div class="community">
                         <a class="select-community select-community-active" href="#" onclick="choose_community('community-projects', event)">Projects</a>
                         <a class="select-community" href="#" onclick="choose_community('community-logiciels', event)">Software</a>
                         <a class="select-community" href="#" onclick="choose_community('community-blog', event)">blog</a>
-                        <a class="select-community" href="#" onclick="choose_community('community-bot', event)">Bot Discord</a>
                     </div>
 
                     <div class="projects" id="projects-en">
@@ -142,7 +126,6 @@
                         <a class="select-community" href="#" onclick="choose_community('community-projects', event)">Projects</a>
                         <a class="select-community select-community-active" href="#" onclick="choose_community('community-logiciels', event)">Software</a>
                         <a class="select-community" href="#" onclick="choose_community('community-blog', event)">blog</a>
-                        <a class="select-community" href="#" onclick="choose_community('community-bot', event)">Bot Discord</a>
                     </div>
 
                     <div class="projects" id="logiciels-en">
@@ -155,27 +138,13 @@
                         <a class="select-community" href="#" onclick="choose_community('community-projects', event)">Projects</a>
                         <a class="select-community" href="#" onclick="choose_community('community-logiciels', event)">Software</a>
                         <a class="select-community select-community-active" href="#" onclick="choose_community('community-blog', event)">blog</a>
-                        <a class="select-community" href="#" onclick="choose_community('community-bot', event)">Bot Discord</a>
                     </div>
 
                     <h1 class="blog-center">Blog</h1>
                     <div id="blog-container-en" class="blog-container"></div>
-                    <div>
-                        <button id="add_en" class="button">next page</button>
+                    <div class="blog-anal">
                         <button id="remove_en" class="button">Previous page</button>
-                    </div>
-                </section>
-
-                <section id="community-bot" community-section style="display: none;">
-                    <div class="community">
-                        <a class="select-community" href="#" onclick="choose_community('community-projects', event)">Projects</a>
-                        <a class="select-community" href="#" onclick="choose_community('community-logiciels', event)">Software</a>
-                        <a class="select-community" href="#" onclick="choose_community('community-blog', event)">blog</a>
-                        <a class="select-community select-community-active" href="#" onclick="choose_community('community-bot', event)">Bot Discord</a>
-                    </div>
-
-                    <div class="projects" id="bot-en">
-                        <h1>Bot Discord</h1>
+                        <button id="add_en" class="button">next page</button>
                     </div>
                 </section>
                 <hr>
@@ -185,9 +154,8 @@
                         <li><a href="https://www.instagram.com/empereur_licorne?igsh=OXVqeGYyNGdrOGFq" target="_blank"><img src="assets/img/instagram.png" alt="Instagram" width="25" height="25"></a></li>  
                     </ul>
                 </div>
-                <p class="version">Version 1.2.0</p>
+                <p class="version">Version 1.2.1</p>
             </section>
-
 
 
             <!--Sections allemand-->
@@ -207,16 +175,16 @@
                 <div class="bio">
                     <p id="text_de"></p>
                     <p id="easter_egg_de"></p>
-                    <p>Ich bin dabei, mehrere Projekte im IT-Bereich zu entwickeln, darunter hauptsächlich mein Projekt Nr. I, das die 'Tina Corp' ist.</p>
+                    <p>Ich bearbeite derzeit mehrere Projekte im IT-Bereich, um meine Kenntnisse zu vertiefen.</p>
                 </div>
                 <hr>
+
 
                 <section id="community-projects" community-section style="display: block;">
                     <div class="community">
                         <a class="select-community select-community-active" href="#" onclick="choose_community('community-projects', event)">Projekte</a>
                         <a class="select-community" href="#" onclick="choose_community('community-logiciels', event)">Software</a>
                         <a class="select-community" href="#" onclick="choose_community('community-blog', event)">blog</a>
-                        <a class="select-community" href="#" onclick="choose_community('community-bot', event)">Bot Discord</a>
                     </div>
 
                     <div class="projects" id="projects-de">
@@ -229,7 +197,6 @@
                         <a class="select-community" href="#" onclick="choose_community('community-projects', event)">Projekte</a>
                         <a class="select-community select-community-active" href="#" onclick="choose_community('community-logiciels', event)">Software</a>
                         <a class="select-community" href="#" onclick="choose_community('community-blog', event)">blog</a>
-                        <a class="select-community" href="#" onclick="choose_community('community-bot', event)">Bot Discord</a>
                     </div>
 
                     <div class="projects" id="logiciels-de">
@@ -242,25 +209,13 @@
                         <a class="select-community" href="#" onclick="choose_community('community-projects', event)">Projekte</a>
                         <a class="select-community" href="#" onclick="choose_community('community-logiciels', event)">Software</a>
                         <a class="select-community select-community-active" href="#" onclick="choose_community('community-blog', event)">blog</a>
-                        <a class="select-community" href="#" onclick="choose_community('community-bot', event)">Bot Discord</a>
                     </div>
 
                     <h1 class="blog-center">Blog</h1>
                     <div id="blog-container-de" class="blog-container"></div>
-                    <button id="add_de" class="button">Nächste Seite</button>
-                    <button id="remove_de" class="button">Vorherige Seite</button>
-                </section>
-
-                <section id="community-bot" community-section style="display: none;">
-                    <div class="community">
-                        <a class="select-community" href="#" onclick="choose_community('community-projects', event)">Projekte</a>
-                        <a class="select-community" href="#" onclick="choose_community('community-logiciels', event)">Software</a>
-                        <a class="select-community" href="#" onclick="choose_community('community-blog', event)">blog</a>
-                        <a class="select-community select-community-active" href="#" onclick="choose_community('community-bot', event)">Bot Discord</a>
-                    </div>
-
-                    <div class="projects" id="bot-de">
-                        <h1>Bot Discord</h1>
+                    <div class="blog-anal">
+                        <button id="remove_de" class="button">Vorherige Seite</button>
+                        <button id="add_de" class="button">Nächste Seite</button>
                     </div>
                 </section>
                 <hr>
@@ -270,14 +225,14 @@
                         <li><a href="https://www.instagram.com/empereur_licorne?igsh=OXVqeGYyNGdrOGFq" target="_blank"><img src="assets/img/instagram.png" alt="Instagram" width="25" height="25"></a></li>  
                     </ul>
                 </div>
-                <p class="version">Version 1.2.0</p>
+                <p class="version">Version 1.2.1</p>
             </section>
         </div>
+
+
     </body>
-    <script src="assets/config.js"></script>
     <script src="main.js"></script>
-    <script src="assets/blog/blog.js"></script>
-    <script src="assets/drafts/random.js"></script>
+    <script type="module" src="assets/import/import.js"></script>
 </html>
 
 
