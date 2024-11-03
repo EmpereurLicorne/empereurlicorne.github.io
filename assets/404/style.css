@@ -1,0 +1,128 @@
+:root {
+    --card: linear-gradient(to  bottom left, #FFD3E6, #E0BBFF, #B4D8E7, #B2F7C9, #FFFACD, #FFCCCC, #AEC6CF );
+}
+
+html, body {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    background-image: url(../img/font.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.page {
+    background: var(--card);
+    width: 90%;
+    margin: 5% auto 10px;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 60%;
+    padding: 0;
+    border-radius: 0 1em 0 1em;
+}
+
+.lang, .lang a, .lang p {
+    margin-left: 5px;
+    display: inline;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+.lang a:hover {
+    color: #ff00c8;
+    text-decoration: underline;
+}
+
+.lang > .lang-active {
+    color: #ff00c8;
+    text-decoration: underline;
+}
+
+.name {
+    align-self: center;
+    text-align: center;
+    margin: 5px;
+}
+
+
+.button-home {
+    text-align: center;
+    position: relative;
+    color: #050505;
+    font-size: 16px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: color 0.3s;
+    animation: box 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    width: 20%;
+    margin-left: auto;
+}
+
+.movement-zone {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.character-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.8s ease-in-out;
+    scrollbar-width: none;
+    width: 25%;
+    z-index: 10;
+    position: absolute;
+}
+
+.character {
+    font-size: 2.5em;
+}
+
+.bubble {
+    background-color: #fff;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    padding: 15px 20px;
+    font-size: 1.1em;
+    color: #555;
+    width: 270px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.bubble::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 10px;
+    border-style: solid;
+    border-color: #fff transparent transparent transparent;
+}
+
+@media (max-width: 600px) {
+    .page {
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+        border-radius: 0 0 0 0;
+    }
+
+    .character-container {
+        width: auto;
+    }
+
+    .name {
+        font-size: 75%;
+    }
+
+    .button-home {
+        width: auto;
+    }
+}
