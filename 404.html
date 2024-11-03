@@ -1,29 +1,41 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page non trouvée</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 50px;
-        }
-        h1 {
-            font-size: 50px;
-        }
-        p {
-            font-size: 20px;
-        }
-        a {
-            color: #007acc;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ERROR 404</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="../assets/img/favicon/favicon.ico" type="image/x-icon">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="../assets/img/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="../assets/img/favicon/site.webmanifest">
+  <link rel="stylesheet" href="./assets/404/style.css">
+  <link rel="stylesheet" href="./assets/index/animations.css">
 </head>
 <body>
-    <h1>404</h1>
-    <p>Désolé, la page que vous cherchez n'existe pas.</p>
-    <p><a href="/">Retour à l'accueil</a></p>
+
+<div class="page">
+    <div class="lang">
+        <a href="#" id="fr" class="lang-active" onclick="choose_404('fr')">fr</a>
+        <p>/</p>
+        <a href="#" id="en" onclick="choose_404('en')">en</a>
+        <p>/</p>
+        <a href="#" id="de" onclick="choose_404('de')">de</a>
+    </div>
+
+    <div class="movement-zone" id="movementZone">
+        <div class="character-container" id="characterContainer">
+          <div class="bubble" id="bubble">Bon... c'était par où déjà ?</div>
+          <div class="character">🤔</div>
+        </div>
+      </div>
+
+
+    <h3 class="name">On dirait que cette page joue à cache-cache... Elle a pris des vacances et je suis en pleine recherche ! Si vous la voyez, faites-le savoir, cela pourrait prendre un moment !</h3>
+    <a href="/" class="button-home">Retour à la page d'accueil</a>
+</div>    
+
+  <script src="./assets/404/main.js"></script>
 </body>
 </html>

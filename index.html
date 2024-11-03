@@ -9,40 +9,41 @@
         <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16x16.png">
         <link rel="apple-touch-icon" href="assets/img/favicon/apple-touch-icon.png">
         <link rel="manifest" href="assets/img/favicon/site.webmanifest">
-        <link rel="stylesheet" href="style.css" id="style">
-        <link rel="stylesheet" href="assets/animations.css" id="animations">
+        <link rel="stylesheet" href="assets/index/style.css" media="print" onload="this.media='all'">
+        <noscript><link rel="stylesheet" href="assets/index/style.css"></noscript>
+        <link rel="stylesheet" href="assets/index/animations.css" media="print" onload="this.media='all'">
+        <noscript><link rel="stylesheet" href="assets/index/animations.css"></noscript>
     </head>
-    <body> 
-
-
+    <body>
         <div class="page">
+
+
             <!--Sections français-->
             <section id="fr" style="display: block;">
                 <div class="lang">
-                    <a href="#" class="lang_active" onclick="choose_lang('fr')">fr</a>
+                    <a href="#" class="lang-active" onclick="choose_lang('fr'); load('fr', 'projects')">fr</a>
                     <p>/</p>
-                    <a href="#" onclick="choose_lang('en')">en</a>
+                    <a href="#" onclick="choose_lang('en'); load('en', 'projects')">en</a>
                     <p>/</p>
-                    <a href="#" onclick="choose_lang('de')">de</a>
+                    <a href="#" onclick="choose_lang('de'); load('de', 'projects')">de</a>
                 </div>
                 <div class="top-part">
-                    <img id="profile-image" src="assets/img/profile.png" alt="">
+                    <img src="assets/img/profile.png" alt="Empereur Licorne" loading="lazy">
                     <p class="name">Empereur Licorne</p>
                 </div>
                 <hr>
                 <div class="bio">
-                    <p id="text_fr"></p>
-                    <p id="easter_egg_fr"></p>
+                    <p id="text-fr"></p>
+                    <p id="easter-egg-fr"></p>
                     <p>Je suis en cours d'élaboration de plusieurs projets dans le domaine informatique pour renforcer mes connaissances.</p>
                 </div>
                 <hr>
 
-
-                <section id="community-projects" community-section style="display: block;">
+                <section id="community-projects.fr" community-sections-fr style="display: block;">
                     <div class="community">
-                        <a class="select-community select-community-active" href="#" onclick="choose_community('community-projects', event)">Projets</a>
-                        <a class="select-community" href="#" onclick="choose_community('community-logiciels', event)">Logiciels</a>
-                        <a class="select-community" href="#" onclick="choose_community('community-blog', event)">blog</a>
+                        <a class="select-community select-community-active" href="#" onclick="choose_community('community-projects.fr', 'fr', event); load('fr', 'projects')">Projets</a>
+                        <a class="select-community" href="#" onclick="choose_community('community-logiciels.fr', 'fr', event); load('fr', 'logiciels')">Logiciels</a>
+                        <a class="select-community" href="#" onclick="choose_community('community-blog.fr', 'fr', event); load('fr', 'blog')">blog</a>
                     </div>
 
                     <div class="projects" id="projects-fr">
@@ -50,11 +51,11 @@
                     </div>
                 </section>
 
-                <section id="community-logiciels" community-section style="display: none;">
+                <section id="community-logiciels.fr" community-sections-fr style="display: none;">
                     <div class="community">
-                        <a class="select-community" href="#" onclick="choose_community('community-projects', event)">Projets</a>
-                        <a class="select-community select-community-active" href="#" onclick="choose_community('community-logiciels', event)">Logiciels</a>
-                        <a class="select-community" href="#" onclick="choose_community('community-blog', event)">blog</a>
+                        <a class="select-community" href="#" onclick="choose_community('community-projects.fr', 'fr', event); load('fr', 'projects')">Projets</a>
+                        <a class="select-community select-community-active" href="#" onclick="choose_community('community-logiciels.fr', 'fr', event); load('fr', 'logiciels')">Logiciels</a>
+                        <a class="select-community" href="#" onclick="choose_community('community-blog.fr', 'fr', event); load('fr', 'blog')">blog</a>
                     </div>
 
                     <div class="projects" id="logiciels-fr">
@@ -62,15 +63,16 @@
                     </div>
                 </section>
 
-                <section id="community-blog" community-section style="display: none;">
+                <section id="community-blog.fr" community-sections-fr style="display: none;">
                     <div class="community">
-                        <a class="select-community" href="#" onclick="choose_community('community-projects', event)">Projets</a>
-                        <a class="select-community" href="#" onclick="choose_community('community-logiciels', event)">Logiciels</a>
-                        <a class="select-community select-community-active" href="#" onclick="choose_community('community-blog', event)">blog</a>
+                        <a class="select-community" href="#" onclick="choose_community('community-projects.fr', 'fr', event); load('fr', 'projects')">Projets</a>
+                        <a class="select-community" href="#" onclick="choose_community('community-logiciels.fr', 'fr', event); load('fr', 'logiciels')">Logiciels</a>
+                        <a class="select-community select-community-active" href="#" onclick="choose_community('community-blog.fr', 'fr', event); load('fr', 'blog')">blog</a>
                     </div>
 
                     <h1 class="blog-center">Blog</h1>
                     <div id="blog-container-fr" class="blog-container"></div>
+
                     <div class="blog-anal">
                         <button id="remove_fr" class="button">Page précédente</button>
                         <button id="add_fr" class="button">Page suivante</button>
@@ -83,37 +85,38 @@
                         <li><a href="https://www.instagram.com/empereur_licorne?igsh=OXVqeGYyNGdrOGFq" target="_blank"><img src="assets/img/instagram.png" alt="Instagram" width="25" height="25"></a></li>  
                     </ul>
                 </div>
-                <p class="version">Version 1.2.1</p>
+                <p class="version">Version 1.2.2</p>
+                <p class="license">Certaines images de ce site sont sous licence Creative Commons BY-NC-ND 4.0. <a href="license\license.html?lang=fr">Cliquez ici pour plus d’infos.</p>
             </section>
+
 
 
             <!--Sections anglais-->
             <section id="en" style="display: none;">
                 <div class="lang">
-                    <a href="#" onclick="choose_lang('fr')">fr</a>
+                    <a href="#" onclick="choose_lang('fr'); load('fr', 'projects')">fr</a>
                     <p>/</p>
-                    <a href="#" class="lang_active" onclick="choose_lang('en')">en</a>
+                    <a href="#" class="lang-active" onclick="choose_lang('en'); load('en', 'projects')">en</a>
                     <p>/</p>
-                    <a href="#" onclick="choose_lang('de')">de</a>
+                    <a href="#" onclick="choose_lang('de'); load('de', 'projects')">de</a>
                 </div>
                 <div class="top-part">
-                    <img id="profile-image" src="assets/img/profile.png" alt="">
+                    <img src="assets/img/profile.png" alt="Empereur Licorne" loading="lazy">
                     <p class="name">Empereur Licorne/Kaiser Einhorn</p>
                 </div>
                 <hr>
                 <div class="bio">
-                    <p id="text_en"></p>
-                    <p id="easter_egg_en"></p>
+                    <p id="text-en"></p>
+                    <p id="easter-egg-en"></p>
                     <p>I'm currently working on several projects in the IT field to reinforce my knowledge.</p>
                 </div>
                 <hr>
 
-
-                <section id="community-projects" community-section style="display: block;">
+                <section id="community-projects.en" community-sections-en style="display: block;">
                     <div class="community">
-                        <a class="select-community select-community-active" href="#" onclick="choose_community('community-projects', event)">Projects</a>
-                        <a class="select-community" href="#" onclick="choose_community('community-logiciels', event)">Software</a>
-                        <a class="select-community" href="#" onclick="choose_community('community-blog', event)">blog</a>
+                        <a class="select-community select-community-active" href="#" onclick="choose_community('community-projects.en', 'en', event); load('en', 'projects')">Projects</a>
+                        <a class="select-community" href="#" onclick="choose_community('community-logiciels.en', 'en', event); load('en', 'logiciels')">Software</a>
+                        <a class="select-community" href="#" onclick="choose_community('community-blog.en', 'en', event); load('en', 'blog')">blog</a>
                     </div>
 
                     <div class="projects" id="projects-en">
@@ -121,11 +124,11 @@
                     </div>
                 </section>
 
-                <section id="community-logiciels" community-section style="display: none;">
+                <section id="community-logiciels.en" community-sections-en style="display: none;">
                     <div class="community">
-                        <a class="select-community" href="#" onclick="choose_community('community-projects', event)">Projects</a>
-                        <a class="select-community select-community-active" href="#" onclick="choose_community('community-logiciels', event)">Software</a>
-                        <a class="select-community" href="#" onclick="choose_community('community-blog', event)">blog</a>
+                        <a class="select-community" href="#" onclick="choose_community('community-projects.en', 'en', event); load('en', 'projects')">Projects</a>
+                        <a class="select-community select-community-active" href="#" onclick="choose_community('community-logiciels.en', 'en', event); load('en', 'logiciels')">Software</a>
+                        <a class="select-community" href="#" onclick="choose_community('community-blog.en', 'en', event); load('en', 'blog')">blog</a>
                     </div>
 
                     <div class="projects" id="logiciels-en">
@@ -133,11 +136,11 @@
                     </div>
                 </section>
 
-                <section id="community-blog" community-section style="display: none;">
+                <section id="community-blog.en" community-sections-en style="display: none;">
                     <div class="community">
-                        <a class="select-community" href="#" onclick="choose_community('community-projects', event)">Projects</a>
-                        <a class="select-community" href="#" onclick="choose_community('community-logiciels', event)">Software</a>
-                        <a class="select-community select-community-active" href="#" onclick="choose_community('community-blog', event)">blog</a>
+                        <a class="select-community" href="#" onclick="choose_community('community-projects.en', 'en', event); load('en', 'projects')">Projects</a>
+                        <a class="select-community" href="#" onclick="choose_community('community-logiciels.en', 'en', event); load('en', 'logiciels')">Software</a>
+                        <a class="select-community select-community-active" href="#" onclick="choose_community('community-blog.en', 'en', event); load('en', 'blog')">blog</a>
                     </div>
 
                     <h1 class="blog-center">Blog</h1>
@@ -147,6 +150,7 @@
                         <button id="add_en" class="button">next page</button>
                     </div>
                 </section>
+
                 <hr>
                 <div class="bottom-part">
                     <ul class="social">
@@ -154,49 +158,50 @@
                         <li><a href="https://www.instagram.com/empereur_licorne?igsh=OXVqeGYyNGdrOGFq" target="_blank"><img src="assets/img/instagram.png" alt="Instagram" width="25" height="25"></a></li>  
                     </ul>
                 </div>
-                <p class="version">Version 1.2.1</p>
+                <p class="version">Version 1.2.2</p>
+                <p class="license">Some images on this site are licensed under a Creative Commons BY-NC-ND 4.0 license. <a href="license\license.html?lang=en">Click here for more info.</p>
             </section>
+
 
 
             <!--Sections allemand-->
             <section id="de" style="display: none;">
                 <div class="lang">
-                    <a href="#" onclick="choose_lang('fr')">fr</a>
+                    <a href="#" onclick="choose_lang('fr'); load('fr', 'projects')">fr</a>
                     <p>/</p>
-                    <a href="#" onclick="choose_lang('en')">en</a>
+                    <a href="#" onclick="choose_lang('en'); load('en', 'projects')">en</a>
                     <p>/</p>
-                    <a href="#" class="lang_active" onclick="choose_lang('de')">de</a>
+                    <a href="#" class="lang-active" onclick="choose_lang('de'); load('fr', 'projects')">de</a>
                 </div>
                 <div class="top-part">
-                    <img id="profile-image" src="assets/img/profile.png" alt="">
+                    <img src="assets/img/profile.png" alt="Empereur Licorne" loading="lazy">
                     <p class="name">Kaiser Einhorn</p>
                 </div>
                 <hr>
                 <div class="bio">
-                    <p id="text_de"></p>
-                    <p id="easter_egg_de"></p>
+                    <p id="text-de"></p>
+                    <p id="easter-egg-de"></p>
                     <p>Ich bearbeite derzeit mehrere Projekte im IT-Bereich, um meine Kenntnisse zu vertiefen.</p>
                 </div>
                 <hr>
 
-
-                <section id="community-projects" community-section style="display: block;">
+                <section id="community-projects.de" community-sections-de style="display: block;">
                     <div class="community">
-                        <a class="select-community select-community-active" href="#" onclick="choose_community('community-projects', event)">Projekte</a>
-                        <a class="select-community" href="#" onclick="choose_community('community-logiciels', event)">Software</a>
-                        <a class="select-community" href="#" onclick="choose_community('community-blog', event)">blog</a>
+                        <a class="select-community select-community-active" href="#" onclick="choose_community('community-projects.de', 'de', event); load('de', 'projects')">Projekte</a>
+                        <a class="select-community" href="#" onclick="choose_community('community-logiciels.de', 'de', event); load('de', 'logiciels')">Software</a>
+                        <a class="select-community" href="#" onclick="choose_community('community-blog.de', 'de', event); load('de', 'blog')">blog</a>
                     </div>
-
+    
                     <div class="projects" id="projects-de">
                         <h1>Projekte</h1>
                     </div>
                 </section>
 
-                <section id="community-logiciels" community-section style="display: none;">
+                <section id="community-logiciels.de" community-sections-de style="display: none;">
                     <div class="community">
-                        <a class="select-community" href="#" onclick="choose_community('community-projects', event)">Projekte</a>
-                        <a class="select-community select-community-active" href="#" onclick="choose_community('community-logiciels', event)">Software</a>
-                        <a class="select-community" href="#" onclick="choose_community('community-blog', event)">blog</a>
+                        <a class="select-community" href="#" onclick="choose_community('community-projects.de', 'de', event); load('de', 'projects')">Projekte</a>
+                        <a class="select-community select-community-active" href="#" onclick="choose_community('community-logiciels.de', 'de', event); load('de', 'logiciels')">Software</a>
+                        <a class="select-community" href="#" onclick="choose_community('community-blog.de', 'de', event); load('de', 'blog')">blog</a>
                     </div>
 
                     <div class="projects" id="logiciels-de">
@@ -204,11 +209,11 @@
                     </div>
                 </section>
 
-                <section id="community-blog" community-section style="display: none;">
+                <section id="community-blog.de" community-sections-de style="display: none;">
                     <div class="community">
-                        <a class="select-community" href="#" onclick="choose_community('community-projects', event)">Projekte</a>
-                        <a class="select-community" href="#" onclick="choose_community('community-logiciels', event)">Software</a>
-                        <a class="select-community select-community-active" href="#" onclick="choose_community('community-blog', event)">blog</a>
+                        <a class="select-community" href="#" onclick="choose_community('community-projects.de', 'de', event); load('de', 'projects')">Projekte</a>
+                        <a class="select-community" href="#" onclick="choose_community('community-logiciels.de', 'de', event); load('de', 'projects')">Software</a>
+                        <a class="select-community select-community-active" href="#" onclick="choose_community('community-blog.de', 'de', event); load('de', 'blog')">blog</a>
                     </div>
 
                     <h1 class="blog-center">Blog</h1>
@@ -218,6 +223,7 @@
                         <button id="add_de" class="button">Nächste Seite</button>
                     </div>
                 </section>
+
                 <hr>
                 <div class="bottom-part">
                     <ul class="social">
@@ -225,15 +231,12 @@
                         <li><a href="https://www.instagram.com/empereur_licorne?igsh=OXVqeGYyNGdrOGFq" target="_blank"><img src="assets/img/instagram.png" alt="Instagram" width="25" height="25"></a></li>  
                     </ul>
                 </div>
-                <p class="version">Version 1.2.1</p>
+                <p class="version">Version 1.2.2</p>
+                <p class="license">Einige Bilder auf dieser Seite stehen unter der Creative-Commons-Lizenz BY-NC-ND 4.0. <a href="license\license.html?lang=de">Klicken Sie hier für weitere Informationen.</p>
             </section>
         </div>
-
-
     </body>
-    <script src="main.js"></script>
-    <script src="assets/drafts/random.js"></script>
-    <script type="module" src="assets/import/import.js"></script>
+
+    <script src="assets/index/main.js" defer></script>
+    <script type="module" src="assets/import/import.js" defer></script>
 </html>
-
-
