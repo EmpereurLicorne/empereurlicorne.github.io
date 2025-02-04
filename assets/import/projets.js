@@ -1,15 +1,15 @@
 const projets = {
     "fr": [
         {
-            "href": "ludi-vesper/index.html?lang=fr",
-            "img": "./license/img/Ludi_vesper.png",
+            "href": "#",
+            "img": "./assets/img/soon.jpg",
             "type": "cube",
             "alt": "",
-            "title": "Ludi Vesper", 
+            "title": "Mise à jour....", 
             "description": [
-                "Ludi Vesper est un projet que je développe seul.",
-                "J'assure les mises à jours et la maintenance.",
-                "C'est l'un de mets projets les plus longs, mets très cools à présenté en soirée."
+                "Je prépare une nouvelle mise à jour pour le site.",
+                "Une refonte complète",
+                "J'essayerai de mettre plien de petit truc et un peu plus d'optimisation"
             ]
         },
     ],
